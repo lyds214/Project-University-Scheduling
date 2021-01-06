@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/enrollment.dart';
+
 // Import the three views here
-
-
+import 'package:myapp/enrollment.dart';
 
 class Header extends StatelessWidget {
   List<Widget> views = [
@@ -16,7 +15,7 @@ class Header extends StatelessWidget {
     ),
     // Enrollment View
     Container(
-      color: Colors.green,
+      child: Enrollment(),
     ),
   ];
 
@@ -41,18 +40,7 @@ class Header extends StatelessWidget {
               ],
             ),
           ),
-          body: TabBarView(
-                    children: <Widget>[
-                      Container(
-                        child: null //tab for "Inbox"
-                      ),
-                      Container(
-                        child: null //tab for "Plan Your Schedule"
-                      ),
-                      Container(
-                        child: Enrollment(), //tab for "Enrollment"
-                      )
-                    ]),
+          body: TabBarView(children: views),
         ));
   }
 }
