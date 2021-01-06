@@ -1,22 +1,23 @@
 import 'package:flutter/material.dart';
 
 // Import the three views here
-
-
+import 'package:myapp/inbox/inbox.dart';
+import 'package:myapp/plan/plan.dart';
+import 'package:myapp/enrollment/enrollment.dart';
 
 class Header extends StatelessWidget {
   List<Widget> views = [
     // Inbox Module View
     Container(
-      color: Colors.yellow,
+      child: Inbox(),
     ),
     // Plan Your Schedule View
     Container(
-      color: Colors.red,
+      child: Plan(),
     ),
     // Enrollment View
     Container(
-      color: Colors.green,
+      child: Enrollment(),
     ),
   ];
 
@@ -41,7 +42,7 @@ class Header extends StatelessWidget {
               ],
             ),
           ),
-          body: TabBarView(children: views,),
+          body: TabBarView(children: views),
         ));
   }
 }
