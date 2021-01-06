@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:myapp/enrollment.dart';
 // Import the three views here
 
 
@@ -41,7 +41,18 @@ class Header extends StatelessWidget {
               ],
             ),
           ),
-          body: TabBarView(children: views,),
+          body: TabBarView(
+                    children: <Widget>[
+                      Container(
+                        child: null //tab for "Inbox"
+                      ),
+                      Container(
+                        child: null //tab for "Plan Your Schedule"
+                      ),
+                      Container(
+                        child: Enrollment(), //tab for "Enrollment"
+                      )
+                    ]),
         ));
   }
 }
