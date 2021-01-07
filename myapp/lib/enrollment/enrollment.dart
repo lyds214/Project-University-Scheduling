@@ -10,88 +10,39 @@ class Enrollment extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>
           [
-            SizedBox(height: 20.0),
-
             Container(
-              padding: EdgeInsets.all(10.0),
+              padding: EdgeInsets.all(30.0),
               child: Text(
               "Enrollment",
               style: TextStyle(
-                fontSize: 40
+                fontSize: 50
               ),
             ),
+            ),
+
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget> 
+              [
+                Container(
+                  padding: EdgeInsets.all(20),
+                  child: FlatButton(
+                  onPressed: (){},
+                  child: Text(
+                  "Catalog",
+                  ),
+                 )
+                ),
+
+                SizedBox(width: 20.0),
+
+                Text("|"),
+                
+              ]
             ),
             
 
-            DefaultTabController(
-              length: 3,
-              initialIndex: 0,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: <Widget>
-                [
-                  Container(
-                    child: TabBar(
-                      labelColor: Colors.blue,
-                      unselectedLabelColor: Colors.black,
-                      tabs: 
-                      [
-                        Tab(text: "Catalog"),
-                        Tab(text: "Semester"),
-                        Tab(text: "Major Requirements"),
-                      ],
-                    ),
-                  ),
-
-                  Container(
-                    height: 400,
-                    decoration: BoxDecoration(
-                      border: Border(
-                        top: BorderSide(
-                          color: Colors.grey,
-                          width: 0.5,
-                        ),
-                      ),
-                    ),
-                    
-                    child: TabBarView(
-                      children: 
-                      [
-                        Container(
-                          child: Center(
-                            child: Catalog(),
-                          ),
-                        ),
-
-                        Container(
-                          child: Center(
-                            child: Text(
-                              'Display Tab 2',
-                              style: TextStyle(
-                                fontSize: 22,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                        ),
-
-                        Container(
-                          child: Center(
-                            child: Text(
-                              'Display Tab 3',
-                              style: TextStyle(
-                                fontSize: 22,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            
           ],
         ),
       ),
