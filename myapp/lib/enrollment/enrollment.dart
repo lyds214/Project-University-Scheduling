@@ -89,6 +89,10 @@ class LeftState extends State<Enrollment> {
                   ),
                 ],
               ),
+
+              Text("This is a search bar."),
+
+              
               FutureBuilder(
                   builder: (BuildContext context, AsyncSnapshot snapshot) {
                 return getView();
