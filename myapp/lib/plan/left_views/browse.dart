@@ -7,6 +7,11 @@ bool _thursdayPressed = false;
 bool _fridayPressed = false;
 bool _saturdayPressed = false;
 
+String startsAt = 'Starts at';
+String endsAt = 'Ends at';
+
+bool check = false;
+
 class Browse extends StatefulWidget {
   @override
   State<StatefulWidget> createState() => BrowseState();
@@ -21,7 +26,10 @@ class BrowseState extends State<Browse> {
           SizedBox(height: 30.0),
           Text("Search Bar"),
           SizedBox(height: 30.0),
-          Text("Days"),
+          Text(
+            "Days",
+            style: TextStyle(fontSize: 25),
+          ),
           SizedBox(height: 30.0),
           ButtonBar(children: <Widget>[
             OutlineButton(
@@ -80,25 +88,64 @@ class BrowseState extends State<Browse> {
             ),
           ]),
           SizedBox(height: 30.0),
-          Text("Time"),
+          Text(
+            "Time",
+            style: TextStyle(fontSize: 25),
+          ),
           ButtonBar(
             children: <Widget>[
-              new DropdownButton(
-                  items: times.map((String time) {
-                    return new DropdownMenuItem(value: time, child: Text(time));
-                  }).toList(),
-                  onChanged: null),
-              new DropdownButton(
-                  items: times.map((String time) {
-                    return new DropdownMenuItem(value: time, child: Text(time));
-                  }).toList(),
-                  onChanged: null),
+              DropdownButton<String>(
+                value: startsAt,
+                icon: Icon(Icons.arrow_drop_down),
+                iconSize: 24,
+                underline: Container(
+                  height: 2,
+                  color: Colors.black,
+                ),
+                onChanged: (String newValue) {
+                  setState(() {
+                    startsAt = newValue;
+                  });
+                },
+                items: times.map<DropdownMenuItem<String>>((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                }).toList(),
+              ),
+              DropdownButton<String>(
+                value: endsAt,
+                icon: Icon(Icons.arrow_drop_down),
+                iconSize: 24,
+                underline: Container(
+                  height: 2,
+                  color: Colors.black,
+                ),
+                onChanged: (String newValue) {
+                  setState(() {
+                    endsAt = newValue;
+                  });
+                },
+                items: times.map<DropdownMenuItem<String>>((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                }).toList(),
+              )
             ],
           ),
           SizedBox(height: 30.0),
           Row(
             children: <Widget>[
-              Checkbox(value: false, onChanged: null),
+              Checkbox(
+                  value: check,
+                  onChanged: (bool newValue) {
+                    setState(() {
+                      check = !check;
+                    });
+                  }),
               Text('Show conflicts in times.')
             ],
           )
@@ -106,6 +153,8 @@ class BrowseState extends State<Browse> {
   }
 
   var times = <String>[
+    'Starts at',
+    'Ends at',
     '7:00AM',
     '7:15AM',
     '7:30AM',
