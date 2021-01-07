@@ -5,7 +5,6 @@ import 'package:myapp/enrollment/catalog.dart';
 import 'package:myapp/enrollment/major_requirements.dart';
 import 'package:myapp/enrollment/semester.dart';
 
-
 enum View { catalog, semester, major_requirements }
 
 class Enrollment extends StatefulWidget {
