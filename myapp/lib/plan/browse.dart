@@ -1,43 +1,52 @@
 import 'package:flutter/material.dart';
 
+// class Browse extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Column(
+//         crossAxisAlignment: CrossAxisAlignment.start,
+//         children: <Widget>[
+//           SizedBox(height: 30.0),
+//           Text("Search Bar"),
+//           SizedBox(height: 30.0),
+//           Text("Days"),
+//           SizedBox(height: 30.0),
+//           ButtonBar(
+//             children: dayButtons,
+//           ),
+//           SizedBox(height: 30.0),
+//           Text("Time"),
+//           ButtonBar(
+//             children: <Widget>[
+//               new DropdownButton(
+//                   items: times.map((String time) {
+//                     return new DropdownMenuItem(value: time, child: Text(time));
+//                   }).toList(),
+//                   onChanged: null),
+//               new DropdownButton(
+//                   items: times.map((String time) {
+//                     return new DropdownMenuItem(value: time, child: Text(time));
+//                   }).toList(),
+//                   onChanged: null),
+//             ],
+//           ),
+//           SizedBox(height: 30.0),
+//           Row(
+//             children: <Widget>[
+//               Checkbox(value: false, onChanged: null),
+//               Text('Show conflicts in times.')
+//             ],
+//           )
+//         ]);
+//   }
+// }
+
 class Browse extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          SizedBox(height: 30.0),
-          Text("Search Bar"),
-          SizedBox(height: 30.0),
-          Text("Days"),
-          SizedBox(height: 30.0),
-          ButtonBar(
-            children: dayButtons,
-          ),
-          SizedBox(height: 30.0),
-          Text("Time"),
-          ButtonBar(
-            children: <Widget>[
-              new DropdownButton(
-                  items: times.map((String time) {
-                    return new DropdownMenuItem(value: time, child: Text(time));
-                  }).toList(),
-                  onChanged: null),
-              new DropdownButton(
-                  items: times.map((String time) {
-                    return new DropdownMenuItem(value: time, child: Text(time));
-                  }).toList(),
-                  onChanged: null),
-            ],
-          ),
-          SizedBox(height: 30.0),
-          Row(
-            children: <Widget>[
-              Checkbox(value: false, onChanged: null),
-              Text('Show conflicts in times.')
-            ],
-          )
-        ]);
+    return Container(
+      child: Text("Browse"),
+    );
   }
 }
 
