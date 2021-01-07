@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 // Uncomment to test
-void main() => runApp(Landing());
+// void main() => runApp(Landing());
 
 class Landing extends StatelessWidget {
   @override
