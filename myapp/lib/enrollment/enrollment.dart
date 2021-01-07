@@ -90,7 +90,47 @@ class LeftState extends State<Enrollment> {
                 ],
               ),
 
+              SizedBox(height: 30),
+
               Text("This is a search bar."),
+
+              SizedBox(height: 30),
+
+              Row(
+                children: <Widget>
+                [
+                  ButtonTheme(
+                    minWidth: 120.0,
+                    height: 60.0,
+                    child: RaisedButton(
+                      onPressed: () {},
+                      child: Text("Subject"),
+                    ),
+                  ),
+
+                  SizedBox(width: 30),
+
+                  ButtonTheme(
+                    minWidth: 120.0,
+                    height: 60.0,
+                    child: RaisedButton(
+                      onPressed: () {},
+                      child: Text("College"),
+                    ),
+                  ),
+
+                  SizedBox(width: 30),
+
+                  ButtonTheme(
+                    minWidth: 120.0,
+                    height: 60.0,
+                    child: RaisedButton(
+                      onPressed: () {},
+                      child: Text("GE Requirement"),
+                    ),
+                  ),
+                ],
+              ),
 
               
               FutureBuilder(

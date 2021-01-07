@@ -4,7 +4,7 @@ class Semester extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      "Text"
+      ""
     );
   }
 }
