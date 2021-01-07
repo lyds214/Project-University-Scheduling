@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class Catalog extends StatelessWidget {
+class Semester extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      "Catalog",
+      "Text"
     );
   }
 }
