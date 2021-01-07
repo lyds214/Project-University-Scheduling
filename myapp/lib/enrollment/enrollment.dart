@@ -100,7 +100,7 @@ class LeftState extends State<Enrollment> {
                 children: <Widget>
                 [
                   ButtonTheme(
-                    minWidth: 120.0,
+                    minWidth: 230.0,
                     height: 60.0,
                     child: RaisedButton(
                       onPressed: () {},
@@ -111,7 +111,7 @@ class LeftState extends State<Enrollment> {
                   SizedBox(width: 30),
 
                   ButtonTheme(
-                    minWidth: 120.0,
+                    minWidth: 230.0,
                     height: 60.0,
                     child: RaisedButton(
                       onPressed: () {},
@@ -122,7 +122,7 @@ class LeftState extends State<Enrollment> {
                   SizedBox(width: 30),
 
                   ButtonTheme(
-                    minWidth: 120.0,
+                    minWidth: 230.0,
                     height: 60.0,
                     child: RaisedButton(
                       onPressed: () {},
