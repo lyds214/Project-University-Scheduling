@@ -1,14 +1,9 @@
 import 'package:flutter/material.dart';
 
 // Three views
-import 'package:myapp/plan/browse.dart';
-import 'package:myapp/plan/schedule.dart';
-import 'package:myapp/plan/ratings.dart';
-
-import 'browse.dart';
-import 'browse.dart';
-import 'ratings.dart';
-import 'schedule.dart';
+import 'package:myapp/plan/left_views/browse.dart';
+import 'package:myapp/plan/left_views/schedule.dart';
+import 'package:myapp/plan/left_views/ratings.dart';
 
 enum View { browse, schedule, ratings }
 
