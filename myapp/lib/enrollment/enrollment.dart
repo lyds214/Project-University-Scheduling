@@ -1,118 +1,100 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/enrollment/catalog.dart';
 
 class Enrollment extends StatelessWidget {
 
   Widget build(BuildContext context){
     return Scaffold(
-
-      //Enrollment Text
-      body: Padding(
-        padding: EdgeInsets.fromLTRB(30, 30, 30, 30),
+      body: Container(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Text("Enrollment",
-              style: TextStyle(fontSize: 50)
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>
+          [
+            SizedBox(height: 20.0),
+
+            Container(
+              padding: EdgeInsets.all(10.0),
+              child: Text(
+              "Enrollment",
+              style: TextStyle(
+                fontSize: 40
+              ),
             ),
-
-          SizedBox(height: 30.0),
-
-          //Catalog Button
-          Row(
-            children: <Widget>[
-              TextButton(
-                onPressed: (){},
-                child: Text(
-                  "Catalog",
-                  style: TextStyle(
-                    fontSize: 30,
-                    color: Colors.black,
-                  )
-                ),
-              ),
-
-              SizedBox(width: 30.0),
-              
-              Text(
-                "|",
-                style: TextStyle(
-                  fontSize: 30,
-                  color: Colors.black,
-                )
-              ),
-
-              SizedBox(width: 30.0),
-
-              //Semester Button
-              TextButton(
-                onPressed: (){},
-                child: Text(
-                  "Semester",
-                  style: TextStyle(
-                    fontSize: 30,
-                    color: Colors.black,
-                  )
-                ),
-              ),
-
-              SizedBox(width: 30.0),
-
-               Text(
-                "|",
-                style: TextStyle(
-                  fontSize: 30,
-                  color: Colors.black,
-                )
-              ),
-
-              SizedBox(width: 30.0),
-
-              //Major Requirements Button
-              TextButton(
-                onPressed: (){},
-                child: Text(
-                  "Major Requirements",
-                  style: TextStyle(
-                    fontSize: 30,
-                    color: Colors.black,
-                  )
-                ),
-              )
-             ] 
-            ),
-          SizedBox(height: 30.0),
-
-          Text("This is where the search bar is."),
-
-          SizedBox(height: 30.0),
-
-          Row(
-            
-            //Subject Button
-            children: <Widget>[
-              RaisedButton(onPressed: (){},
-              child: Text("Subject")
             ),
             
-            SizedBox(width: 30.0),
 
-              //College Button
-              RaisedButton(onPressed: (){},
-              child: Text("College")
+            DefaultTabController(
+              length: 3,
+              initialIndex: 0,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: <Widget>
+                [
+                  Container(
+                    child: TabBar(
+                      labelColor: Colors.blue,
+                      unselectedLabelColor: Colors.black,
+                      tabs: 
+                      [
+                        Tab(text: "Catalog"),
+                        Tab(text: "Semester"),
+                        Tab(text: "Major Requirements"),
+                      ],
+                    ),
+                  ),
+
+                  Container(
+                    height: 400,
+                    decoration: BoxDecoration(
+                      border: Border(
+                        top: BorderSide(
+                          color: Colors.grey,
+                          width: 0.5,
+                        ),
+                      ),
+                    ),
+                    
+                    child: TabBarView(
+                      children: 
+                      [
+                        Container(
+                          child: Center(
+                            child: Catalog(),
+                          ),
+                        ),
+
+                        Container(
+                          child: Center(
+                            child: Text(
+                              'Display Tab 2',
+                              style: TextStyle(
+                                fontSize: 22,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        ),
+
+                        Container(
+                          child: Center(
+                            child: Text(
+                              'Display Tab 3',
+                              style: TextStyle(
+                                fontSize: 22,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
-
-            SizedBox(width: 30.0),
-
-              //GE Requirement Button
-              RaisedButton(onPressed: (){},
-              child: Text("GE Requirement"),
-            )
-            ],
-          )
-
-          ]
-        )
+          ],
+        ),
       ),
-    );  
+    ); 
   }
 }
