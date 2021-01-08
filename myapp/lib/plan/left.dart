@@ -9,7 +9,7 @@ enum View { browse, schedule, ratings }
 
 class Left extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() => LeftState();
+  LeftState createState() => LeftState();
 }
 
 class LeftState extends State<Left> {
