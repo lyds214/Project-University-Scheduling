@@ -17,12 +17,15 @@ class EnrollmentState extends State<Enrollment> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Padding(
-          padding: EdgeInsets.fromLTRB(30, 30, 30, 30),
-          child: Column(
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Container(
+          child: Padding(
+            padding: EdgeInsets.fromLTRB(30, 30, 30, 30),
+            child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
+            children: <Widget>
+            [
               Text("Enrollment", style: TextStyle(fontSize: 50)),
               SizedBox(height: 30.0),
               Row(
@@ -138,6 +141,8 @@ class EnrollmentState extends State<Enrollment> {
               })
             ],
           )),
+        ),
+      ),
     );
   }
 
