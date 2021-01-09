@@ -14,29 +14,29 @@ class _LandingState extends State<Landing> {
 
   @override
   void initState() {
-    Timer(Duration(seconds: 5), () => Navigator.push(context, MaterialPageRoute(builder: (context) => Header())));
+    Timer(Duration(seconds: 3), () => Navigator.push(context, MaterialPageRoute(builder: (context) => Header())));
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.grey,
-        body: Container(
-          decoration: BoxDecoration( // Background
-            image: DecorationImage(
-              image: AssetImage("assets/img/background.png"),
-              fit: BoxFit.cover,
-              colorFilter: ColorFilter.mode(Colors.black.withOpacity(0.2), BlendMode.dstATop), // Make image slightly transparent
-            ),
-          ),
-          child: Center(
-            child: Text(
-              'College Planning Made Easier', // Introduction text
-              textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 36, color: Colors.white, fontWeight: FontWeight.bold),
-            ),
+      backgroundColor: Colors.grey,
+      body: Container(
+        decoration: BoxDecoration( // Background
+          image: DecorationImage(
+            image: AssetImage("assets/img/background.png"),
+            fit: BoxFit.cover,
+            colorFilter: ColorFilter.mode(Colors.black.withOpacity(0.2), BlendMode.dstATop), // Make image slightly transparent
           ),
         ),
+        child: Center(
+          child: Text(
+            'College Planning Made Easier', // Introduction text
+            textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 36, color: Colors.white, fontWeight: FontWeight.bold),
+          ),
+        ),
+      ),
     );
   }
 }
