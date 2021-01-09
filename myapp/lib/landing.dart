@@ -1,14 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/header.dart';
+import 'dart:async';
 
 // Uncomment to test
 // void main() => runApp(Landing());
 
-class Landing extends StatelessWidget {
+class Landing extends StatefulWidget {
+  @override
+  _LandingState createState() => _LandingState();
+}
+
+class _LandingState extends State<Landing> {
+
+  @override
+  void initState() {
+    Timer(Duration(seconds: 5), () => Navigator.push(context, MaterialPageRoute(builder: (context) => Header())));
+  }
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Landing | <official project name>', // Change to project name
-      home: Scaffold(
+    return Scaffold(
         backgroundColor: Colors.grey,
         body: Container(
           decoration: BoxDecoration( // Background
@@ -26,8 +37,6 @@ class Landing extends StatelessWidget {
             ),
           ),
         ),
-      ),
-      debugShowCheckedModeBanner: false, // Remove debug banner
     );
   }
 }
