@@ -9,10 +9,10 @@ enum View { catalog, semester, major_requirements }
 
 class Enrollment extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() => LeftState();
+  EnrollmentState createState() => EnrollmentState();
 }
 
-class LeftState extends State<Enrollment> {
+class EnrollmentState extends State<Enrollment> {
   View selectedView = View.catalog;
 
   @override
@@ -150,6 +150,6 @@ class LeftState extends State<Enrollment> {
       case View.major_requirements:
         return MajorRequirements();
     }
-    return null;
+    return Catalog();
   }
 }
