@@ -1,10 +1,35 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/header.dart';
-// import 'dart:async';
 
-class Landing extends StatelessWidget {
+class Landing extends StatefulWidget {
+  createState() => _Landing();
+}
+
+class _Landing extends State<Landing> with SingleTickerProviderStateMixin {
+  AnimationController _controller;
+  Animation _animation;
+
+  @override
+  void initState() {
+    _controller = AnimationController(
+      vsync: this,
+      duration: Duration(seconds: 2),
+    );
+    _animation = Tween(
+      begin: 0.0,
+      end: 1.0,
+    ).animate(_controller);
+  }
+
+  @override
+  dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
+    _controller.forward();
     return Scaffold(
       backgroundColor: Colors.grey,
       body: Container(
@@ -26,21 +51,27 @@ class Landing extends StatelessWidget {
             mainAxisSize: MainAxisSize.min, // Fit to center
             children: <Widget>[
               Spacer(flex: 12), // Space from top
-              Text( // Text
-                'College Planning Made Easier', 
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 36,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold
+              FadeTransition(
+                opacity: _animation,
+                child: Text( // Text
+                  'College Planning Made Easier', 
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 36,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold
+                  ),
                 ),
               ),
               Spacer(flex: 1), // Space from each other
-              ElevatedButton( // Enter button
-                child: Text("Enter"),
-                onPressed: () {
-                  Navigator.of(context).push(_createRoute());
-                }
+              FadeTransition(
+                opacity: _animation,
+                child: ElevatedButton( // Enter button
+                  child: Text("Enter"),
+                  onPressed: () {
+                    Navigator.of(context).push(_createRoute());
+                  }
+                ),
               ),
               Spacer(flex: 12), // Space from bottom
             ],
@@ -74,52 +105,3 @@ Route _createRoute() {
     },
   );
 }
-
-
-// OTHER VERSION //
-
-// class Landing extends StatefulWidget {
-//   @override
-//   _LandingState createState() => _LandingState();
-// }
-
-// class _LandingState extends State<Landing> {
-//   @override
-//   void initState() {
-//     Timer(
-//         Duration(seconds: 3),
-//         () => Navigator.pushReplacement(
-//           context,
-//           MaterialPageRoute(
-//             builder: (context) => Header(),
-//           ),
-//         )
-//     );
-//   }
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       backgroundColor: Colors.grey,
-//       body: Container(
-//         decoration: BoxDecoration(
-//           // Background
-//           image: DecorationImage(
-//             image: AssetImage("assets/img/background.png"),
-//             fit: BoxFit.cover,
-//             colorFilter: ColorFilter.mode(Colors.black.withOpacity(0.2),
-//                 BlendMode.dstATop), // Make image slightly transparent
-//           ),
-//         ),
-//         child: Center(
-//           child: Text(
-//             'College Planning Made Easier', // Introduction text
-//             textAlign: TextAlign.center,
-//             style: TextStyle(
-//                 fontSize: 36, color: Colors.white, fontWeight: FontWeight.bold),
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }
