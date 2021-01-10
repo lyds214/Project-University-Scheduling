@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 // Import our personal widgets here
 import 'package:myapp/header.dart';
+import 'package:myapp/landing.dart';
 
 
 // Run the app
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Header(),
+      home: Landing(),
       debugShowCheckedModeBanner: false,
     );
   }
