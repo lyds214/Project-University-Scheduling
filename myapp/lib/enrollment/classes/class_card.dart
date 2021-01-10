@@ -9,6 +9,7 @@ class ClassCard extends StatefulWidget{
 class ClassCardState extends State<ClassCard>
 {
 
+  //These are the list of classes with acronyms and class names.
   List<ClassList> classListA = [
     ClassList(acronym: "ACCT", className: "Accountancy"),
     ClassList(acronym: "AFRS", className: "Africana Studies"),
@@ -148,6 +149,8 @@ class ClassCardState extends State<ClassCard>
     ClassList(acronym: "NUTR", className: "Nutrition and Dietetics"),
   ];
 
+  List<ClassList> classListO =[];
+
   List<ClassList> classListP =[
     ClassList(acronym: "PHIL", className: "Philosophy"),
     ClassList(acronym: "PHSC", className: "Physical Science"),
@@ -156,6 +159,8 @@ class ClassCardState extends State<ClassCard>
     ClassList(acronym: "PSY", className: "Psychology"),
     ClassList(acronym: "PPA", className: "Public Policy & Administration"),
   ];
+
+  List<ClassList> classListQ = [];
 
    List<ClassList> classListR =[
     ClassList(acronym: "REC", className: "Recreation"),
@@ -196,285 +201,324 @@ class ClassCardState extends State<ClassCard>
   List<ClassList> classListW =[
     ClassList(acronym: "WGSS", className: "Women's Gender Sexuality Studies"),
   ];
+
+  List<ClassList> classListX = [];
+  
+  List<ClassList> classListY = [];
+
+  List<ClassList> classListZ = [];
   
 
+//Creates cards.
   Widget classListTemplate(string)
   {
     return SizedBox(
-      width: 230,
-      height: 140,
+      width: 210,
+      height: 50,
       child:  Card(
-      margin: EdgeInsets.all(20),
-      child: Padding(
-        padding: const EdgeInsets.all(10),
-        child:  Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>
-          [
-            Text(
-              string.acronym,
-              style: TextStyle(
-                fontSize: 18,
-                color: Colors.grey[600],
-              ),
-            ),
+        margin: EdgeInsets.all(20),
+        child: Padding(
+          padding: const EdgeInsets.all(10),
+          child: Container(
+            child:  Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>
+              [
+                Padding(padding: EdgeInsets.all(15.0)),
+                Center(
+                  child: Text(
+                    string.acronym,
+                    style: TextStyle(
+                      fontSize: 36,
+                      color: Colors.grey[600],
+                    ),
+                  ),
+                ),
 
-            SizedBox(height: 6),
-
-            Text(
-              string.className,
-              style: TextStyle(
-                fontSize: 15,
-                color: Colors.grey[600],
-              ),
+                SizedBox(height: 6),
+                Center(
+                  child: Text(
+                    string.className,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 30,
+                      color: Colors.grey[600],
+                    ),
+                  ),
+                ),
+              ],
             ),
-          ]
+          ),
         ),
-      ),     
-    ), 
+      ),
     );
-    
-   
   }
 
-
-  Widget build(BuildContext context)
+//Creates a huge grid.
+  Widget build(BuildContext context) // Builds pages for TabView
   {
     return TabBarView(
         children: <Widget>
         [
           Container(
             padding: EdgeInsets.fromLTRB(26, 40, 10, 10),
-            child: GridView.count(
-              crossAxisCount: 4,
-              // crossAxisAlignment: CrossAxisAlignment.start,
-              children: classListA.map((string) => classListTemplate(string)).toList(),  
-             ),
+            child: GridView.extent( // Creates grid of A classes
+              padding: EdgeInsets.all(10.0),
+              childAspectRatio: (425/300),
+              maxCrossAxisExtent: 425.0,
+              children: classListA.map((string) => classListTemplate(string)).toList(), //prints out the class names and acronyms on the cards.
+            ),
            ),
 
           Container(
             padding: EdgeInsets.fromLTRB(26, 40, 10, 10),
-            child: GridView.count(
-              crossAxisCount: 4,
-              // crossAxisAlignment: CrossAxisAlignment.start,
+            child: GridView.extent( // Creates grid of B classes
+              padding: EdgeInsets.all(10.0),
+              childAspectRatio: (425/300),
+              maxCrossAxisExtent: 425.0,
               children: classListB.map((string) => classListTemplate(string)).toList(),
             ),
-            //child: Text("B", style: TextStyle(fontSize: 30),),
           ),
 
           Container(
             padding: EdgeInsets.fromLTRB(26, 40, 10, 10),
-            child: GridView.count(
-              crossAxisCount: 4,
-              // crossAxisAlignment: CrossAxisAlignment.start,
+            child: GridView.extent( // Creates grid of C classes
+              padding: EdgeInsets.all(10.0),
+              childAspectRatio: (425/300),
+              maxCrossAxisExtent: 425.0,
               children: classListC.map((string) => classListTemplate(string)).toList(),
             ),
-            //child: Text("C", style: TextStyle(fontSize: 30),),
           ),
 
           Container(
             padding: EdgeInsets.fromLTRB(26, 40, 10, 10),
-            child: GridView.count(
-              crossAxisCount: 4,
-              // crossAxisAlignment: CrossAxisAlignment.start,
+            child: GridView.extent( // Creates grid of D classes
+              padding: EdgeInsets.all(10.0),
+              childAspectRatio: (425/300),
+              maxCrossAxisExtent: 425.0,
               children: classListD.map((string) => classListTemplate(string)).toList(),
             ),
-            //child: Text("D", style: TextStyle(fontSize: 30),),
           ),
 
           Container(
             padding: EdgeInsets.fromLTRB(26, 40, 10, 10),
-            child: GridView.count(
-              crossAxisCount: 4,
-              // crossAxisAlignment: CrossAxisAlignment.start,
+            child: GridView.extent( // Creates grid of E classes
+              padding: EdgeInsets.all(10.0),
+              childAspectRatio: (425/300),
+              maxCrossAxisExtent: 425.0,
               children: classListE.map((string) => classListTemplate(string)).toList(),
             ),
-            //child: Text("E", style: TextStyle(fontSize: 30),),
           ),
 
           Container(
             padding: EdgeInsets.fromLTRB(26, 40, 10, 10),
-            child: GridView.count(
-              crossAxisCount: 4,
-              // crossAxisAlignment: CrossAxisAlignment.start,
+            child: GridView.extent( // Creates grid of F classes
+              padding: EdgeInsets.all(10.0),
+              childAspectRatio: (425/300),
+              maxCrossAxisExtent: 425.0,
               children: classListF.map((string) => classListTemplate(string)).toList(),
             ),
-            //child: Text("F", style: TextStyle(fontSize: 30),),
           ),
 
           Container(
             padding: EdgeInsets.fromLTRB(26, 40, 10, 10),
-            child: GridView.count(
-              crossAxisCount: 4,
-              // crossAxisAlignment: CrossAxisAlignment.start,
+            child: GridView.extent( // Creates grid of G classes
+              padding: EdgeInsets.all(10.0),
+              childAspectRatio: (425/300),
+              maxCrossAxisExtent: 425.0,
               children: classListG.map((string) => classListTemplate(string)).toList(),
             ),
-            //child: Text("G", style: TextStyle(fontSize: 30),),
           ),
 
           Container(
             padding: EdgeInsets.fromLTRB(26, 40, 10, 10),
-            child: GridView.count(
-              crossAxisCount: 4,
-              // crossAxisAlignment: CrossAxisAlignment.start,
+            child: GridView.extent( // Creates grid of H classes
+              padding: EdgeInsets.all(10.0),
+              childAspectRatio: (425/300),
+              maxCrossAxisExtent: 425.0,
               children: classListH.map((string) => classListTemplate(string)).toList(),
             ),
-            //child: Text("H", style: TextStyle(fontSize: 30),),
           ),
 
           Container(
             padding: EdgeInsets.fromLTRB(26, 40, 10, 10),
-            child: GridView.count(
-              crossAxisCount: 4,
-              // crossAxisAlignment: CrossAxisAlignment.start,
+            child: GridView.extent( // Creates grid of I classes
+              padding: EdgeInsets.all(10.0),
+              childAspectRatio: (425/300),
+              maxCrossAxisExtent: 425.0,
               children: classListI.map((string) => classListTemplate(string)).toList(),
             ),
-            //child: Text("I", style: TextStyle(fontSize: 30),),
           ),
 
           Container(
             padding: EdgeInsets.fromLTRB(26, 40, 10, 10),
-            child: GridView.count(
-              crossAxisCount: 4,
-              // crossAxisAlignment: CrossAxisAlignment.start,
+            child: GridView.extent( // Creates grid of J classes
+              padding: EdgeInsets.all(10.0),
+              childAspectRatio: (425/300),
+              maxCrossAxisExtent: 425.0,
               children: classListJ.map((string) => classListTemplate(string)).toList(),
             ),
-            //child: Text("J", style: TextStyle(fontSize: 30),),
           ),
 
           Container(
             padding: EdgeInsets.fromLTRB(26, 40, 10, 10),
-            child: GridView.count(
-              crossAxisCount: 4,
-              // crossAxisAlignment: CrossAxisAlignment.start,
+            child: GridView.extent( // Creates grid of K classes
+              padding: EdgeInsets.all(10.0),
+              childAspectRatio: (425/300),
+              maxCrossAxisExtent: 425.0,
               children: classListK.map((string) => classListTemplate(string)).toList(),
             ),
-            //child: Text("K", style: TextStyle(fontSize: 30),),
           ),
 
           Container(
             padding: EdgeInsets.fromLTRB(26, 40, 10, 10),
-            child: GridView.count(
-              crossAxisCount: 4,
-              // crossAxisAlignment: CrossAxisAlignment.start,
+            child: GridView.extent( // Creates grid of L classes
+              padding: EdgeInsets.all(10.0),
+              childAspectRatio: (425/300),
+              maxCrossAxisExtent: 425.0,
               children: classListL.map((string) => classListTemplate(string)).toList(),
             ),
-            //child: Text("L", style: TextStyle(fontSize: 30),),
           ),
 
           Container(
             padding: EdgeInsets.fromLTRB(26, 40, 10, 10),
-            child: GridView.count(
-              crossAxisCount: 4,
-              // crossAxisAlignment: CrossAxisAlignment.start,
+            child: GridView.extent( // Creates grid of M classes
+              padding: EdgeInsets.all(10.0),
+              childAspectRatio: (425/300),
+              maxCrossAxisExtent: 425.0,
               children: classListM.map((string) => classListTemplate(string)).toList(),
             ),
-            //child: Text("M", style: TextStyle(fontSize: 30),),
           ),
 
           Container(
             padding: EdgeInsets.fromLTRB(26, 40, 10, 10),
-            child: GridView.count(
-              crossAxisCount: 4,
-              // crossAxisAlignment: CrossAxisAlignment.start,
+            child: GridView.extent( // Creates grid of N classes
+              padding: EdgeInsets.all(10.0),
+              childAspectRatio: (425/300),
+              maxCrossAxisExtent: 425.0,
               children: classListN.map((string) => classListTemplate(string)).toList(),
             ),
-            //child: Text("N", style: TextStyle(fontSize: 30),),
           ),
 
           Container(
             padding: EdgeInsets.fromLTRB(26, 40, 10, 10),
-            child: Text("O", style: TextStyle(fontSize: 30),),
+            child: GridView.extent( // Creates grid of O classes
+              padding: EdgeInsets.all(10.0),
+              childAspectRatio: (425/300),
+              maxCrossAxisExtent: 425.0,
+              children: classListO.map((string) => classListTemplate(string)).toList(),
+            ),
           ),
 
           Container(
             padding: EdgeInsets.fromLTRB(26, 40, 10, 10),
-            child: GridView.count(
-              crossAxisCount: 4,
-              // crossAxisAlignment: CrossAxisAlignment.start,
+            child: GridView.extent( // Creates grid of P classes
+              padding: EdgeInsets.all(10.0),
+              childAspectRatio: (425/300),
+              maxCrossAxisExtent: 425.0,
               children: classListP.map((string) => classListTemplate(string)).toList(),
             ),
-            //child: Text("P", style: TextStyle(fontSize: 30),),
           ),
 
           Container(
             padding: EdgeInsets.fromLTRB(26, 40, 10, 10),
-            child: Text("Q", style: TextStyle(fontSize: 30),),
+            child: GridView.extent( // Creates grid of Q classes
+              padding: EdgeInsets.all(10.0),
+              childAspectRatio: (425/300),
+              maxCrossAxisExtent: 425.0,
+              children: classListQ.map((string) => classListTemplate(string)).toList(),
+            ),
           ),
 
           Container(
             padding: EdgeInsets.fromLTRB(26, 40, 10, 10),
-            child: GridView.count(
-              crossAxisCount: 4,
-              // crossAxisAlignment: CrossAxisAlignment.start,
+            child: GridView.extent( // Creates grid of R classes
+              padding: EdgeInsets.all(10.0),
+              childAspectRatio: (425/300),
+              maxCrossAxisExtent: 425.0,
               children: classListR.map((string) => classListTemplate(string)).toList(),
             ),
-            //child: Text("R", style: TextStyle(fontSize: 30),),
           ),
 
           Container(
             padding: EdgeInsets.fromLTRB(26, 40, 10, 10),
-            child: GridView.count(
-              crossAxisCount: 4,
-              // crossAxisAlignment: CrossAxisAlignment.start,
+            child: GridView.extent( // Creates grid of S classes
+
+              padding: EdgeInsets.all(10.0),
+              childAspectRatio: (425/300),
+              maxCrossAxisExtent: 425.0,
               children: classListS.map((string) => classListTemplate(string)).toList(),
             ),
-            //child: Text("S", style: TextStyle(fontSize: 30),),
           ),
 
           Container(
             padding: EdgeInsets.fromLTRB(26, 40, 10, 10),
-            child: GridView.count(
-              crossAxisCount: 4,
-              // crossAxisAlignment: CrossAxisAlignment.start,
+            child: GridView.extent( // Creates a grid of T classes
+              padding: EdgeInsets.all(10.0),
+              childAspectRatio: (425/300),
+              maxCrossAxisExtent: 425.0,
               children: classListT.map((string) => classListTemplate(string)).toList(),
             ),
-            //child: Text("T", style: TextStyle(fontSize: 30),),
           ),
 
           Container(
             padding: EdgeInsets.fromLTRB(26, 40, 10, 10),
-            child: GridView.count(
-              crossAxisCount: 4,
-              // crossAxisAlignment: CrossAxisAlignment.start,
+            child: GridView.extent( // Creates a grid of U classes
+              padding: EdgeInsets.all(10.0),
+              childAspectRatio: (425/300),
+              maxCrossAxisExtent: 425.0,
               children: classListU.map((string) => classListTemplate(string)).toList(),
             ),
-            //child: Text("U", style: TextStyle(fontSize: 30),),
           ),
 
           Container(
             padding: EdgeInsets.fromLTRB(26, 40, 10, 10),
-            child: GridView.count(
-              crossAxisCount: 4,
-              // crossAxisAlignment: CrossAxisAlignment.start,
+            child: GridView.extent( // Creates a grid of V classes
+              padding: EdgeInsets.all(10.0),
+              childAspectRatio: (425/300),
+              maxCrossAxisExtent: 425.0,
               children: classListV.map((string) => classListTemplate(string)).toList(),
             ),
-            //child: Text("V", style: TextStyle(fontSize: 30),),
           ),
 
           Container(
             padding: EdgeInsets.fromLTRB(26, 40, 10, 10),
-            child: GridView.count(
-              crossAxisCount: 4,
-              // crossAxisAlignment: CrossAxisAlignment.start,
+            child: GridView.extent( // Creates a grid of W classes
+              padding: EdgeInsets.all(10.0),
+              childAspectRatio: (425/300),
+              maxCrossAxisExtent: 425.0,
               children: classListW.map((string) => classListTemplate(string)).toList(),
             ),
-            //child: Text("W", style: TextStyle(fontSize: 30),),
           ),
 
           Container(
             padding: EdgeInsets.fromLTRB(26, 40, 10, 10),
-            child: Text("X", style: TextStyle(fontSize: 30),),
+            child: GridView.extent( // Creates a grid of X classes
+              padding: EdgeInsets.all(10.0),
+              childAspectRatio: (425/300),
+              maxCrossAxisExtent: 425.0,
+              children: classListX.map((string) => classListTemplate(string)).toList(),
+            ),
           ),
 
           Container(
             padding: EdgeInsets.fromLTRB(26, 40, 10, 10),
-            child: Text("Y", style: TextStyle(fontSize: 30),),
+            child: GridView.extent( // Creates a grid of Y classes
+              padding: EdgeInsets.all(10.0),
+              childAspectRatio: (425/300),
+              maxCrossAxisExtent: 425.0,
+              children: classListY.map((string) => classListTemplate(string)).toList(),
+            ),
           ),
 
           Container(
             padding: EdgeInsets.fromLTRB(26, 40, 10, 10),
-            child: Text("Z", style: TextStyle(fontSize: 30),),
+            child: GridView.extent( // Creates a grid of Z classes
+              padding: EdgeInsets.all(10.0),
+              childAspectRatio: (425/300),
+              maxCrossAxisExtent: 425.0,
+              children: classListW.map((string) => classListTemplate(string)).toList(),
+            ),
           ),                  
         ]
       );

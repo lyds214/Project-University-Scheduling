@@ -31,6 +31,7 @@ class CatalogState extends State<Catalog>{
 
             SizedBox(height: 20),
 
+            //Creates tabs
             DefaultTabController(
               length: 26,
               initialIndex: 0, 
@@ -74,6 +75,7 @@ class CatalogState extends State<Catalog>{
                     ),
                   ),
 
+                  //Shows cards and grids
                   Container(
                     height: 5000,
                     //color: Colors.red,
