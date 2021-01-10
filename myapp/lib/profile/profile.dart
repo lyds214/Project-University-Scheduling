@@ -10,6 +10,7 @@ class _State extends State<Profile> {
   Widget build(BuildContext context) {
     return Container(
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text("Hello Profile"),
         ],
