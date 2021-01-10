@@ -4,9 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:myapp/inbox/inbox.dart';
 import 'package:myapp/plan/plan.dart';
 import 'package:myapp/enrollment/enrollment.dart';
+import 'package:myapp/profile/profile.dart'; 
 
 class Header extends StatelessWidget {
   List<Widget> views = [
+    // Profile Module View
+    Container(
+      child: Profile(),
+    ),
     // Inbox Module View
     Container(
       child: Inbox(),
@@ -30,6 +35,9 @@ class Header extends StatelessWidget {
             title: Text('University Scheduling Application'),
             bottom: TabBar(
               tabs: <Widget>[
+                Tab(
+                  text: 'Profile',
+                ),
                 Tab(
                   text: 'Inbox',
                 ),
