@@ -234,8 +234,6 @@ class ClassCardState extends State<ClassCard>
     ), 
     );
     
-    
-    
    
   }
 
@@ -247,18 +245,18 @@ class ClassCardState extends State<ClassCard>
         [
           Container(
             padding: EdgeInsets.fromLTRB(26, 40, 10, 10),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: classListA.map((string) => classListTemplate(string)).toList(),
-              //Text("A", style: TextStyle(fontSize: 30),),
-            
-            ),
-          ),
+            child: GridView.count(
+              crossAxisCount: 4,
+              // crossAxisAlignment: CrossAxisAlignment.start,
+              children: classListA.map((string) => classListTemplate(string)).toList(),  
+             ),
+           ),
 
           Container(
             padding: EdgeInsets.fromLTRB(26, 40, 10, 10),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            child: GridView.count(
+              crossAxisCount: 4,
+              // crossAxisAlignment: CrossAxisAlignment.start,
               children: classListB.map((string) => classListTemplate(string)).toList(),
             ),
             //child: Text("B", style: TextStyle(fontSize: 30),),
@@ -266,8 +264,9 @@ class ClassCardState extends State<ClassCard>
 
           Container(
             padding: EdgeInsets.fromLTRB(26, 40, 10, 10),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            child: GridView.count(
+              crossAxisCount: 4,
+              // crossAxisAlignment: CrossAxisAlignment.start,
               children: classListC.map((string) => classListTemplate(string)).toList(),
             ),
             //child: Text("C", style: TextStyle(fontSize: 30),),
@@ -275,8 +274,9 @@ class ClassCardState extends State<ClassCard>
 
           Container(
             padding: EdgeInsets.fromLTRB(26, 40, 10, 10),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            child: GridView.count(
+              crossAxisCount: 4,
+              // crossAxisAlignment: CrossAxisAlignment.start,
               children: classListD.map((string) => classListTemplate(string)).toList(),
             ),
             //child: Text("D", style: TextStyle(fontSize: 30),),
@@ -284,8 +284,9 @@ class ClassCardState extends State<ClassCard>
 
           Container(
             padding: EdgeInsets.fromLTRB(26, 40, 10, 10),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            child: GridView.count(
+              crossAxisCount: 4,
+              // crossAxisAlignment: CrossAxisAlignment.start,
               children: classListE.map((string) => classListTemplate(string)).toList(),
             ),
             //child: Text("E", style: TextStyle(fontSize: 30),),
@@ -293,8 +294,9 @@ class ClassCardState extends State<ClassCard>
 
           Container(
             padding: EdgeInsets.fromLTRB(26, 40, 10, 10),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            child: GridView.count(
+              crossAxisCount: 4,
+              // crossAxisAlignment: CrossAxisAlignment.start,
               children: classListF.map((string) => classListTemplate(string)).toList(),
             ),
             //child: Text("F", style: TextStyle(fontSize: 30),),
@@ -302,8 +304,9 @@ class ClassCardState extends State<ClassCard>
 
           Container(
             padding: EdgeInsets.fromLTRB(26, 40, 10, 10),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            child: GridView.count(
+              crossAxisCount: 4,
+              // crossAxisAlignment: CrossAxisAlignment.start,
               children: classListG.map((string) => classListTemplate(string)).toList(),
             ),
             //child: Text("G", style: TextStyle(fontSize: 30),),
@@ -311,8 +314,9 @@ class ClassCardState extends State<ClassCard>
 
           Container(
             padding: EdgeInsets.fromLTRB(26, 40, 10, 10),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            child: GridView.count(
+              crossAxisCount: 4,
+              // crossAxisAlignment: CrossAxisAlignment.start,
               children: classListH.map((string) => classListTemplate(string)).toList(),
             ),
             //child: Text("H", style: TextStyle(fontSize: 30),),
@@ -320,8 +324,9 @@ class ClassCardState extends State<ClassCard>
 
           Container(
             padding: EdgeInsets.fromLTRB(26, 40, 10, 10),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            child: GridView.count(
+              crossAxisCount: 4,
+              // crossAxisAlignment: CrossAxisAlignment.start,
               children: classListI.map((string) => classListTemplate(string)).toList(),
             ),
             //child: Text("I", style: TextStyle(fontSize: 30),),
@@ -329,8 +334,9 @@ class ClassCardState extends State<ClassCard>
 
           Container(
             padding: EdgeInsets.fromLTRB(26, 40, 10, 10),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            child: GridView.count(
+              crossAxisCount: 4,
+              // crossAxisAlignment: CrossAxisAlignment.start,
               children: classListJ.map((string) => classListTemplate(string)).toList(),
             ),
             //child: Text("J", style: TextStyle(fontSize: 30),),
@@ -338,8 +344,9 @@ class ClassCardState extends State<ClassCard>
 
           Container(
             padding: EdgeInsets.fromLTRB(26, 40, 10, 10),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            child: GridView.count(
+              crossAxisCount: 4,
+              // crossAxisAlignment: CrossAxisAlignment.start,
               children: classListK.map((string) => classListTemplate(string)).toList(),
             ),
             //child: Text("K", style: TextStyle(fontSize: 30),),
@@ -347,8 +354,9 @@ class ClassCardState extends State<ClassCard>
 
           Container(
             padding: EdgeInsets.fromLTRB(26, 40, 10, 10),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            child: GridView.count(
+              crossAxisCount: 4,
+              // crossAxisAlignment: CrossAxisAlignment.start,
               children: classListL.map((string) => classListTemplate(string)).toList(),
             ),
             //child: Text("L", style: TextStyle(fontSize: 30),),
@@ -356,8 +364,9 @@ class ClassCardState extends State<ClassCard>
 
           Container(
             padding: EdgeInsets.fromLTRB(26, 40, 10, 10),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            child: GridView.count(
+              crossAxisCount: 4,
+              // crossAxisAlignment: CrossAxisAlignment.start,
               children: classListM.map((string) => classListTemplate(string)).toList(),
             ),
             //child: Text("M", style: TextStyle(fontSize: 30),),
@@ -365,8 +374,9 @@ class ClassCardState extends State<ClassCard>
 
           Container(
             padding: EdgeInsets.fromLTRB(26, 40, 10, 10),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            child: GridView.count(
+              crossAxisCount: 4,
+              // crossAxisAlignment: CrossAxisAlignment.start,
               children: classListN.map((string) => classListTemplate(string)).toList(),
             ),
             //child: Text("N", style: TextStyle(fontSize: 30),),
@@ -379,8 +389,9 @@ class ClassCardState extends State<ClassCard>
 
           Container(
             padding: EdgeInsets.fromLTRB(26, 40, 10, 10),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            child: GridView.count(
+              crossAxisCount: 4,
+              // crossAxisAlignment: CrossAxisAlignment.start,
               children: classListP.map((string) => classListTemplate(string)).toList(),
             ),
             //child: Text("P", style: TextStyle(fontSize: 30),),
@@ -393,8 +404,9 @@ class ClassCardState extends State<ClassCard>
 
           Container(
             padding: EdgeInsets.fromLTRB(26, 40, 10, 10),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            child: GridView.count(
+              crossAxisCount: 4,
+              // crossAxisAlignment: CrossAxisAlignment.start,
               children: classListR.map((string) => classListTemplate(string)).toList(),
             ),
             //child: Text("R", style: TextStyle(fontSize: 30),),
@@ -402,8 +414,9 @@ class ClassCardState extends State<ClassCard>
 
           Container(
             padding: EdgeInsets.fromLTRB(26, 40, 10, 10),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            child: GridView.count(
+              crossAxisCount: 4,
+              // crossAxisAlignment: CrossAxisAlignment.start,
               children: classListS.map((string) => classListTemplate(string)).toList(),
             ),
             //child: Text("S", style: TextStyle(fontSize: 30),),
@@ -411,8 +424,9 @@ class ClassCardState extends State<ClassCard>
 
           Container(
             padding: EdgeInsets.fromLTRB(26, 40, 10, 10),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            child: GridView.count(
+              crossAxisCount: 4,
+              // crossAxisAlignment: CrossAxisAlignment.start,
               children: classListT.map((string) => classListTemplate(string)).toList(),
             ),
             //child: Text("T", style: TextStyle(fontSize: 30),),
@@ -420,8 +434,9 @@ class ClassCardState extends State<ClassCard>
 
           Container(
             padding: EdgeInsets.fromLTRB(26, 40, 10, 10),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            child: GridView.count(
+              crossAxisCount: 4,
+              // crossAxisAlignment: CrossAxisAlignment.start,
               children: classListU.map((string) => classListTemplate(string)).toList(),
             ),
             //child: Text("U", style: TextStyle(fontSize: 30),),
@@ -429,8 +444,9 @@ class ClassCardState extends State<ClassCard>
 
           Container(
             padding: EdgeInsets.fromLTRB(26, 40, 10, 10),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            child: GridView.count(
+              crossAxisCount: 4,
+              // crossAxisAlignment: CrossAxisAlignment.start,
               children: classListV.map((string) => classListTemplate(string)).toList(),
             ),
             //child: Text("V", style: TextStyle(fontSize: 30),),
@@ -438,8 +454,9 @@ class ClassCardState extends State<ClassCard>
 
           Container(
             padding: EdgeInsets.fromLTRB(26, 40, 10, 10),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            child: GridView.count(
+              crossAxisCount: 4,
+              // crossAxisAlignment: CrossAxisAlignment.start,
               children: classListW.map((string) => classListTemplate(string)).toList(),
             ),
             //child: Text("W", style: TextStyle(fontSize: 30),),
