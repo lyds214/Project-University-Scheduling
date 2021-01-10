@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 // Three views
 import 'package:myapp/enrollment/catalog.dart';
+import 'package:myapp/enrollment/classes/class_card.dart';
 import 'package:myapp/enrollment/major_requirements.dart';
 import 'package:myapp/enrollment/semester.dart';
 
@@ -105,7 +106,12 @@ class EnrollmentState extends State<Enrollment> {
                     minWidth: 230.0,
                     height: 60.0,
                     child: RaisedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => ClassCard())
+                        );
+                      },
                       child: Text("Subject"),
                     ),
                   ),
