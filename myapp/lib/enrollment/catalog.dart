@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/enrollment/classes/class_list.dart';
+import 'package:myapp/enrollment/classes/class_card.dart';
 
 class Catalog extends StatefulWidget{
   @override
@@ -75,9 +75,9 @@ class CatalogState extends State<Catalog>{
                   ),
 
                   Container(
-                    height: 600,
+                    height: 5000,
                     //color: Colors.red,
-                    child: ClassList(),
+                    child: ClassCard(),
                   ),       
                 ],
               ),
