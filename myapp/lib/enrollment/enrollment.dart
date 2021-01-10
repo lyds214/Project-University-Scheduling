@@ -9,20 +9,23 @@ enum View { catalog, semester, major_requirements }
 
 class Enrollment extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() => LeftState();
+  EnrollmentState createState() => EnrollmentState();
 }
 
-class LeftState extends State<Enrollment> {
+class EnrollmentState extends State<Enrollment> {
   View selectedView = View.catalog;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Padding(
-          padding: EdgeInsets.fromLTRB(30, 30, 30, 30),
-          child: Column(
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Container(
+          child: Padding(
+            padding: EdgeInsets.fromLTRB(30, 30, 30, 30),
+            child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
+            children: <Widget>
+            [
               Text("Enrollment", style: TextStyle(fontSize: 50)),
               SizedBox(height: 30.0),
               Row(
@@ -138,6 +141,8 @@ class LeftState extends State<Enrollment> {
               })
             ],
           )),
+        ),
+      ),
     );
   }
 
@@ -150,6 +155,6 @@ class LeftState extends State<Enrollment> {
       case View.major_requirements:
         return MajorRequirements();
     }
-    return null;
+    return Catalog();
   }
 }
