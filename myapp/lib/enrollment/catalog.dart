@@ -186,7 +186,7 @@ class CatalogState extends State<Catalog>{
     else {
       _searchList = _list
         .where((element) =>
-          element.className.toLowerCase().contains(_searchText.toLowerCase()) ||
+          element.subject.toLowerCase().contains(_searchText.toLowerCase()) ||
           element.acronym.toLowerCase().contains(_searchText.toLowerCase()))
         .toList();
         print('${_searchList.length}');
@@ -254,7 +254,7 @@ class SearchCardClass extends StatelessWidget {
                 SizedBox(height: 6),
                 Center(
                   child: Text(
-                    classItem.className,
+                    classItem.subject,
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 30,
