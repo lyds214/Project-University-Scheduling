@@ -174,20 +174,6 @@ class _CollegeState extends State<College> {
     return Column(
       children: <Widget> [
         Container(
-          height: 50,
-          child: Align(
-            alignment: Alignment.centerLeft,
-            child: Text(
-              "View by College",
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 30,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-        ),
-        Container(
           height: 600,
           child: GridView.count(
             padding: EdgeInsets.all(10.0),

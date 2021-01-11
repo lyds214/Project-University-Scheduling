@@ -224,7 +224,7 @@ class _GenEdRequirementsState extends State<GenEdRequirements> {
 
   void init() {
     _list = 
-      genEdA1 + genEdA2 + genEdA3 + genEdB1B3 + genEdB3 + genEdB4 + genEdC1 + genEdC2A + genEdC2B + genEdD1B + genEdD2 + genUDB;
+      genEdA1 + genEdA2 + genEdA3 + genEdB1B3 + genEdB3 + genEdB4 + genEdC1 + genEdC2A + genEdC2B + genEdD1A + genEdD1B + genEdD2 + genUDB;
     _searchList = _list;
   }
   
@@ -264,7 +264,7 @@ class _GenEdRequirementsState extends State<GenEdRequirements> {
           SizedBox(height: 20),
 
           DefaultTabController(
-            length: 7,
+            length: 13,
             initialIndex: 0, 
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -282,12 +282,12 @@ class _GenEdRequirementsState extends State<GenEdRequirements> {
                       Tab(text: "B1/B3"),
                       Tab(text: "B3"),
                       Tab(text: "B4"),
-                      // Tab(text: "C1"),
-                      // Tab(text: "C2A"),
-                      // Tab(text: "C2B"),
-                      // Tab(text: "D1A"),
-                      // Tab(text: "D1B"),
-                      // Tab(text: "D2"),
+                      Tab(text: "C1"),
+                      Tab(text: "C2A"),
+                      Tab(text: "C2B"),
+                      Tab(text: "D1A"),
+                      Tab(text: "D1B"),
+                      Tab(text: "D2"),
                       Tab(text: "UDB"),
                     ],
                   ),
@@ -352,7 +352,7 @@ class _GenEdRequirementsState extends State<GenEdRequirements> {
 
         Container(
           padding: EdgeInsets.fromLTRB(26, 40, 10, 10),
-          child: GridView.extent( // Creates grid of GE genEdB3 classes
+          child: GridView.extent( // Creates grid of GE B3 classes
             padding: EdgeInsets.all(10.0),
             childAspectRatio: (425/300),
             maxCrossAxisExtent: 425.0,
@@ -370,6 +370,66 @@ class _GenEdRequirementsState extends State<GenEdRequirements> {
           ),
         ),
 
+        Container(
+          padding: EdgeInsets.fromLTRB(26, 40, 10, 10),
+          child: GridView.extent( // Creates grid of GE C1 classes
+            padding: EdgeInsets.all(10.0),
+            childAspectRatio: (425/300),
+            maxCrossAxisExtent: 425.0,
+            children: genEdC1.map((string) => _buildClassItem(string)).toList(), //prints out the class names and acronyms on the cards.
+          ),
+        ),
+
+        Container(
+          padding: EdgeInsets.fromLTRB(26, 40, 10, 10),
+          child: GridView.extent( // Creates grid of GE C2A classes
+            padding: EdgeInsets.all(10.0),
+            childAspectRatio: (425/300),
+            maxCrossAxisExtent: 425.0,
+            children: genEdC2A.map((string) => _buildClassItem(string)).toList(), //prints out the class names and acronyms on the cards.
+          ),
+        ),
+
+        Container(
+          padding: EdgeInsets.fromLTRB(26, 40, 10, 10),
+          child: GridView.extent( // Creates grid of GE C2B classes
+            padding: EdgeInsets.all(10.0),
+            childAspectRatio: (425/300),
+            maxCrossAxisExtent: 425.0,
+            children: genEdC2B.map((string) => _buildClassItem(string)).toList(), //prints out the class names and acronyms on the cards.
+          ),
+        ),
+
+        Container(
+          padding: EdgeInsets.fromLTRB(26, 40, 10, 10),
+          child: GridView.extent( // Creates grid of GE D1A classes
+            padding: EdgeInsets.all(10.0),
+            childAspectRatio: (425/300),
+            maxCrossAxisExtent: 425.0,
+            children: genEdD1A.map((string) => _buildClassItem(string)).toList(), //prints out the class names and acronyms on the cards.
+          ),
+        ),
+        
+        Container(
+          padding: EdgeInsets.fromLTRB(26, 40, 10, 10),
+          child: GridView.extent( // Creates grid of GE D1B classes
+            padding: EdgeInsets.all(10.0),
+            childAspectRatio: (425/300),
+            maxCrossAxisExtent: 425.0,
+            children: genEdD1B.map((string) => _buildClassItem(string)).toList(), //prints out the class names and acronyms on the cards.
+          ),
+        ),
+
+        Container(
+          padding: EdgeInsets.fromLTRB(26, 40, 10, 10),
+          child: GridView.extent( // Creates grid of GE D2 classes
+            padding: EdgeInsets.all(10.0),
+            childAspectRatio: (425/300),
+            maxCrossAxisExtent: 425.0,
+            children: genEdD2.map((string) => _buildClassItem(string)).toList(), //prints out the class names and acronyms on the cards.
+          ),
+        ),
+        
         Container(
           padding: EdgeInsets.fromLTRB(26, 40, 10, 10),
           child: GridView.extent( // Creates grid of GE UDB classes
