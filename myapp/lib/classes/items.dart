@@ -10,26 +10,24 @@ class SubjectItem { // Item to create subject
 
   String acronym;
   String subject;
-  _ClassItem subClass;
+  ClassItem subClass;
 
   SubjectItem({this.acronym, this.subject, this.subClass});
 }
 
 
-class _ClassItem { // Abstract item to create class
+class ClassItem { // Item to create class
 
   String classNumber;
   String classTitle;
   String genEdReq;
-  _ClassItem section;
-  _ClassItem({this.classNumber, this.classTitle, this.section});
+  ClassItem section;
+
+  ClassItem({this.classNumber, this.classTitle, this.section});
 }
 
-class _SectionItem { // Abstract item to create section
+class SectionItem { // Item to create section
   String section;
   
-  _SectionItem({this.section});
+  SectionItem({this.section});
 }
-
-
-
