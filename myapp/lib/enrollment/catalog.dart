@@ -102,7 +102,7 @@ class CatalogState extends State<Catalog>{
       case SubView.college:
         return College();
       case SubView.ge_requirements:
-        return GenEdRequirements();;
+        return GenEdRequirements();
     }
     return Subject();
   }

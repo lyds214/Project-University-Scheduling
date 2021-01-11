@@ -147,7 +147,7 @@ class _SubjectState extends State<Subject>{
                         height: 5000,
                         child: SearchState,
                       ),
-                    ),       
+                    ),    
                   ],
                 ),
               ),
