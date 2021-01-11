@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 // Import the three views here
 import 'package:myapp/inbox/inbox.dart';
 import 'package:myapp/plan/plan.dart';
-import 'package:myapp/enrollment/enrollment.dart';
-import 'package:myapp/profile/profile.dart'; 
+import 'package:myapp/enrollment/enrollment.dart'; 
 
 class Header extends StatelessWidget {
   List<Widget> views = [
