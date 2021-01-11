@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/enrollment/classes/class_card.dart';
-import 'package:myapp/enrollment/classes/class_list.dart';
+import 'package:myapp/classes/class_card.dart';
+import 'package:myapp/classes/items.dart';
 
 class Subject extends StatefulWidget{
   @override
@@ -14,8 +14,8 @@ class _SubjectState extends State<Subject>{
   bool _IsSearching;
   final key = GlobalKey<ScaffoldState>();
   final TextEditingController _searchQuery = TextEditingController();
-  List<ClassList> _list;
-  List<ClassList> _searchList = List();
+  List<SubjectItem> _list;
+  List<SubjectItem> _searchList = List();
   String _searchText = "";
 
   _SubjectState() {
@@ -24,14 +24,14 @@ class _SubjectState extends State<Subject>{
         setState(() {
           _IsSearching = false;
           _searchText = "";
-          _buildClassList();
+          _buildSubjectItem();
         });
       } 
       else {
         setState(() {
           _IsSearching = true;
           _searchText = _searchQuery.text;
-          _buildClassList();
+          _buildSubjectItem();
         });
       }
     });
@@ -159,11 +159,11 @@ class _SubjectState extends State<Subject>{
   }
   
 
-  List<ClassList> _buildList() {
+  List<SubjectItem> _buildList() {
     return _list;
   }
 
-  List<ClassList> _buildClassList() {
+  List<SubjectItem> _buildSubjectItem() {
     SearchState = BuildSearchGrid(context);
     _searchList = _list
       .where((element) =>
@@ -208,7 +208,7 @@ class _SubjectState extends State<Subject>{
 
 class SearchCardClass extends StatelessWidget {
 
-  final ClassList classItem = ClassList();
+  final SubjectItem classItem = SubjectItem();
   
   Widget build(BuildContext context) {
     return SizedBox(
