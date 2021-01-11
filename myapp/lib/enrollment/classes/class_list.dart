@@ -1,8 +1,18 @@
-class ClassList
-{
+class ClassList {
 
   String acronym;
-  String className;
+  String subject;
+  SubClass subClass;
 
-  ClassList({this.acronym, this.className});
+  ClassList({this.acronym, this.subject, this.subClass});
 }
+
+
+class SubClass {
+
+  String classNumber;
+  String classTitle;
+  String genEdReq;
+  SubClass({this.classNumber, this.classTitle});
+}
+

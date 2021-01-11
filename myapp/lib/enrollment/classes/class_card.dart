@@ -11,195 +11,195 @@ class ClassCardState extends State<ClassCard>
 
   //These are the list of classes with acronyms and class names.
   List<ClassList> classListA = [
-    ClassList(acronym: "ACCT", className: "Accountancy"),
-    ClassList(acronym: "AFRS", className: "Africana Studies"),
-    ClassList(acronym: "ASLD", className: "Am Sign Lang Ling & Deaf Culture"),
-    ClassList(acronym: "AIS", className: "American Indian Studies"),
-    ClassList(acronym: "AMST", className: "American Studies"),
-    ClassList(acronym: "ANTH", className: "Anthropology"),
-    ClassList(acronym: "ARAB", className: "Arabic"),
-    ClassList(acronym: "ART", className: "Art"),
-    ClassList(acronym: "AH", className: "Art History"),
-    ClassList(acronym: "AAAS", className: "Asian & Asian American Studies"),
-    ClassList(acronym: "ASAM", className: "Asian American Studies"),
-    ClassList(acronym: "A/ST", className: "Asian Studies"),
-    ClassList(acronym: "ASTR", className: "Astronomy"),
-    ClassList(acronym: "AT", className: "Athetic Training"),
-    ClassList(acronym: "ATEP", className: "Athletic Training Education Pg"),
-    ClassList(acronym: "ATHL", className: "Athletics"),
+    ClassList(acronym: "ACCT", subject: "Accountancy"),
+    ClassList(acronym: "AFRS", subject: "Africana Studies"),
+    ClassList(acronym: "ASLD", subject: "Am Sign Lang Ling & Deaf Culture"),
+    ClassList(acronym: "AIS", subject: "American Indian Studies"),
+    ClassList(acronym: "AMST", subject: "American Studies"),
+    ClassList(acronym: "ANTH", subject: "Anthropology"),
+    ClassList(acronym: "ARAB", subject: "Arabic"),
+    ClassList(acronym: "ART", subject: "Art"),
+    ClassList(acronym: "AH", subject: "Art History"),
+    ClassList(acronym: "AAAS", subject: "Asian & Asian American Studies"),
+    ClassList(acronym: "ASAM", subject: "Asian American Studies"),
+    ClassList(acronym: "A/ST", subject: "Asian Studies"),
+    ClassList(acronym: "ASTR", subject: "Astronomy"),
+    ClassList(acronym: "AT", subject: "Athetic Training"),
+    ClassList(acronym: "ATEP", subject: "Athletic Training Education Pg"),
+    ClassList(acronym: "ATHL", subject: "Athletics"),
   ];
 
   List<ClassList> classListB = [
-    ClassList(acronym: "BIOL", className: "Biology"),
-    ClassList(acronym: "BME", className: "Biomedical Engineering"),
-    ClassList(acronym: "BLAW", className: "Business Law"),
-    ClassList(acronym: "CBA", className: "College of Business"),
+    ClassList(acronym: "BIOL", subject: "Biology"),
+    ClassList(acronym: "BME", subject: "Biomedical Engineering"),
+    ClassList(acronym: "BLAW", subject: "Business Law"),
+    ClassList(acronym: "CBA", subject: "College of Business"),
   ];
 
   List<ClassList> classListC = [
-    ClassList(acronym: "OLNE", className: "CSU Online - LB Only"),
-    ClassList(acronym: "KHMR", className: "Cambodian"),
-    ClassList(acronym: "CH E", className: "Chemical Engineering"),
-    ClassList(acronym: "CHEM", className: "Chemistry & Biochemistry"),
-    ClassList(acronym: "CHLS", className: "Chicano & Latino Studies"),
-    ClassList(acronym: "CDFS", className: "Child Development & Family Studies"),
-    ClassList(acronym: "CHIN", className: "Chinese"),
-    ClassList(acronym: "C E", className: "Civil Engineering"),
-    ClassList(acronym: "CLSC", className: "Classics"),
-    ClassList(acronym: "COMM", className: "Communication Studies"),
-    ClassList(acronym: "CWL", className: "Comparative World Literature"),
-    ClassList(acronym: "CECS", className: "Computer Engineering & Computer Science"),
-    ClassList(acronym: "XYZ", className: "Concurrent Enrollment"), //put this in X tab?
-    ClassList(acronym: "CEM", className: "Construction Engineering Management"),
-    ClassList(acronym: "CAFF", className: "Consumer Affairs"),
-    ClassList(acronym: "COUN", className: "Counseling"),
-    ClassList(acronym: "CRJU", className: "Criminology & Criminal Justice"),
+    ClassList(acronym: "OLNE", subject: "CSU Online - LB Only"),
+    ClassList(acronym: "KHMR", subject: "Cambodian"),
+    ClassList(acronym: "CH E", subject: "Chemical Engineering"),
+    ClassList(acronym: "CHEM", subject: "Chemistry & Biochemistry"),
+    ClassList(acronym: "CHLS", subject: "Chicano & Latino Studies"),
+    ClassList(acronym: "CDFS", subject: "Child Development & Family Studies"),
+    ClassList(acronym: "CHIN", subject: "Chinese"),
+    ClassList(acronym: "C E", subject: "Civil Engineering"),
+    ClassList(acronym: "CLSC", subject: "Classics"),
+    ClassList(acronym: "COMM", subject: "Communication Studies"),
+    ClassList(acronym: "CWL", subject: "Comparative World Literature"),
+    ClassList(acronym: "CECS", subject: "Computer Engineering & Computer Science"),
+    ClassList(acronym: "XYZ", subject: "Concurrent Enrollment"), //put this in X tab?
+    ClassList(acronym: "CEM", subject: "Construction Engineering Management"),
+    ClassList(acronym: "CAFF", subject: "Consumer Affairs"),
+    ClassList(acronym: "COUN", subject: "Counseling"),
+    ClassList(acronym: "CRJU", subject: "Criminology & Criminal Justice"),
   ];
 
   List<ClassList> classListD = [
-    ClassList(acronym: "DANC", className: "Dance"),
-    ClassList(acronym: "DESN", className: "Design"),
-    ClassList(acronym: "DPT", className: "Doctor of Physical Therapy"),
+    ClassList(acronym: "DANC", subject: "Dance"),
+    ClassList(acronym: "DESN", subject: "Design"),
+    ClassList(acronym: "DPT", subject: "Doctor of Physical Therapy"),
   ];
   
   List<ClassList> classListE = [
-    ClassList(acronym: "ECON", className: "Economics"),
-    ClassList(acronym: "EDLD", className: "Education Leadership Doctorate"),
-    ClassList(acronym: "EDCI", className: "Education - Curriculum & Instruction"), //go back to curr later
-    ClassList(acronym: "EDEC", className: "Education - Early Childhood"),
-    ClassList(acronym: "EDEL", className: "Education - Elementary"),
-    ClassList(acronym: "EDSE", className: "Education - Secondary"),
-    ClassList(acronym: "EDSS", className: "Education - Single Subject"),
-    ClassList(acronym: "EDSP", className: "Educational Specialist"),
-    ClassList(acronym: "EDAD", className: "Educational Adminstration"),
-    ClassList(acronym: "ED P", className: "Educational Psychology"),
-    ClassList(acronym: "E E", className: "Electrical Engineering"),
-    ClassList(acronym: "ENGR", className: "Engineering"),
-    ClassList(acronym: "E T", className: "Engineering Technology"),
-    ClassList(acronym: "ENGL", className: "English"),
-    ClassList(acronym: "ES P", className: "Environmental Science & Policy"),
+    ClassList(acronym: "ECON", subject: "Economics"),
+    ClassList(acronym: "EDLD", subject: "Education Leadership Doctorate"),
+    ClassList(acronym: "EDCI", subject: "Education - Curriculum & Instruction"), //go back to curr later
+    ClassList(acronym: "EDEC", subject: "Education - Early Childhood"),
+    ClassList(acronym: "EDEL", subject: "Education - Elementary"),
+    ClassList(acronym: "EDSE", subject: "Education - Secondary"),
+    ClassList(acronym: "EDSS", subject: "Education - Single Subject"),
+    ClassList(acronym: "EDSP", subject: "Educational Specialist"),
+    ClassList(acronym: "EDAD", subject: "Educational Adminstration"),
+    ClassList(acronym: "ED P", subject: "Educational Psychology"),
+    ClassList(acronym: "E E", subject: "Electrical Engineering"),
+    ClassList(acronym: "ENGR", subject: "Engineering"),
+    ClassList(acronym: "E T", subject: "Engineering Technology"),
+    ClassList(acronym: "ENGL", subject: "English"),
+    ClassList(acronym: "ES P", subject: "Environmental Science & Policy"),
   ];
 
    List<ClassList> classListF = [
-     ClassList(acronym: "FMD", className: "Fashion Merchandising & Design"),
-     ClassList(acronym: "FIL", className: "Filipino"),
-     ClassList(acronym: "FEA", className: "Film and Electronic Arts"),
-     ClassList(acronym: "FIN", className: "Finance"),
-     ClassList(acronym: "FSCI", className: "Food Science"),
-     ClassList(acronym: "FREN", className: "French"),
+     ClassList(acronym: "FMD", subject: "Fashion Merchandising & Design"),
+     ClassList(acronym: "FIL", subject: "Filipino"),
+     ClassList(acronym: "FEA", subject: "Film and Electronic Arts"),
+     ClassList(acronym: "FIN", subject: "Finance"),
+     ClassList(acronym: "FSCI", subject: "Food Science"),
+     ClassList(acronym: "FREN", subject: "French"),
    ];
 
    List<ClassList> classListG = [
-     ClassList(acronym: "GEOG", className: "Geography"),
-     ClassList(acronym: "GEOL", className: "Geology"),
-     ClassList(acronym: "GERM", className: "German"),
-     ClassList(acronym: "GERN", className: "Gerontology"),
-     ClassList(acronym: "GBA", className: "Graduate Business Admin"),
-     ClassList(acronym: "GK", className: "Greek"),
+     ClassList(acronym: "GEOG", subject: "Geography"),
+     ClassList(acronym: "GEOL", subject: "Geology"),
+     ClassList(acronym: "GERM", subject: "German"),
+     ClassList(acronym: "GERN", subject: "Gerontology"),
+     ClassList(acronym: "GBA", subject: "Graduate Business Admin"),
+     ClassList(acronym: "GK", subject: "Greek"),
    ];
 
    List<ClassList> classListH =[
-     ClassList(acronym: "HCA", className: "Health Care Administration"),
-     ClassList(acronym: "H SC", className: "Health Science"),
-     ClassList(acronym: "HEBW", className: "Hebrew"),
-     ClassList(acronym: "HIST", className: "History"),
-     ClassList(acronym: "HM", className: "Hospitality Management"),
-     ClassList(acronym: "HDEV", className: "Human Development"),
-     ClassList(acronym: "HRM", className: "Human Resources Management"),
+     ClassList(acronym: "HCA", subject: "Health Care Administration"),
+     ClassList(acronym: "H SC", subject: "Health Science"),
+     ClassList(acronym: "HEBW", subject: "Hebrew"),
+     ClassList(acronym: "HIST", subject: "History"),
+     ClassList(acronym: "HM", subject: "Hospitality Management"),
+     ClassList(acronym: "HDEV", subject: "Human Development"),
+     ClassList(acronym: "HRM", subject: "Human Resources Management"),
    ];
 
    List<ClassList> classListI =[
-     ClassList(acronym: "I S", className: "Information Systems"),
-     ClassList(acronym: "INTL", className: "International Education"),
-     ClassList(acronym: "I/ST", className: "International Studies"),
-     ClassList(acronym: "ITAL", className: "Italian"),
+     ClassList(acronym: "I S", subject: "Information Systems"),
+     ClassList(acronym: "INTL", subject: "International Education"),
+     ClassList(acronym: "I/ST", subject: "International Studies"),
+     ClassList(acronym: "ITAL", subject: "Italian"),
 
    ];
 
    List<ClassList> classListJ =[
-     ClassList(acronym: "JAPN", className: "Japanese"),
-     ClassList(acronym: "JOUR", className: "Journalism"),
+     ClassList(acronym: "JAPN", subject: "Japanese"),
+     ClassList(acronym: "JOUR", subject: "Journalism"),
    ];
 
    List<ClassList> classListK =[
-     ClassList(acronym: "KIN", className: "Kinesiology"),
-     ClassList(acronym: "KOR", className: "Korean"),
+     ClassList(acronym: "KIN", subject: "Kinesiology"),
+     ClassList(acronym: "KOR", subject: "Korean"),
    ];
 
    List<ClassList> classListL =[
-     ClassList(acronym: "LAT", className: "Latin"),
-     ClassList(acronym: "C/LA", className: "College of Liberal Arts"),
-     ClassList(acronym: "L/ST", className: "Liberal Studies"),
-     ClassList(acronym: "LING", className: "Linguistics"),
+     ClassList(acronym: "LAT", subject: "Latin"),
+     ClassList(acronym: "C/LA", subject: "College of Liberal Arts"),
+     ClassList(acronym: "L/ST", subject: "Liberal Studies"),
+     ClassList(acronym: "LING", subject: "Linguistics"),
    ];
   
   List<ClassList> classListM =[
-    ClassList(acronym: "MGMT", className: "Management"),
-    ClassList(acronym: "MKTG", className: "Marketing"),
-    ClassList(acronym: "MATH", className: "Mathematics"),
-    ClassList(acronym: "MTED", className: "Mathematics Education"),
-    ClassList(acronym: "MAE", className: "Mechanical & Aerospace Engineering"),
-    ClassList(acronym: "M S", className: "Military Science"),
-    ClassList(acronym: "MUS", className: "Music"),
+    ClassList(acronym: "MGMT", subject: "Management"),
+    ClassList(acronym: "MKTG", subject: "Marketing"),
+    ClassList(acronym: "MATH", subject: "Mathematics"),
+    ClassList(acronym: "MTED", subject: "Mathematics Education"),
+    ClassList(acronym: "MAE", subject: "Mechanical & Aerospace Engineering"),
+    ClassList(acronym: "M S", subject: "Military Science"),
+    ClassList(acronym: "MUS", subject: "Music"),
   ];
 
   List<ClassList> classListN =[
-    ClassList(acronym: "NSCI", className: "Natural Sciences"),
-    ClassList(acronym: "NRSG", className: "Nursing"),
-    ClassList(acronym: "NUTR", className: "Nutrition and Dietetics"),
+    ClassList(acronym: "NSCI", subject: "Natural Sciences"),
+    ClassList(acronym: "NRSG", subject: "Nursing"),
+    ClassList(acronym: "NUTR", subject: "Nutrition and Dietetics"),
   ];
 
   List<ClassList> classListO =[];
 
   List<ClassList> classListP =[
-    ClassList(acronym: "PHIL", className: "Philosophy"),
-    ClassList(acronym: "PHSC", className: "Physical Science"),
-    ClassList(acronym: "PHYS", className: "Physics"),
-    ClassList(acronym: "POSC", className: "Political Science"),
-    ClassList(acronym: "PSY", className: "Psychology"),
-    ClassList(acronym: "PPA", className: "Public Policy & Administration"),
+    ClassList(acronym: "PHIL", subject: "Philosophy"),
+    ClassList(acronym: "PHSC", subject: "Physical Science"),
+    ClassList(acronym: "PHYS", subject: "Physics"),
+    ClassList(acronym: "POSC", subject: "Political Science"),
+    ClassList(acronym: "PSY", subject: "Psychology"),
+    ClassList(acronym: "PPA", subject: "Public Policy & Administration"),
   ];
 
   List<ClassList> classListQ = [];
 
    List<ClassList> classListR =[
-    ClassList(acronym: "REC", className: "Recreation"),
-    ClassList(acronym: "R/ST", className: "Religious Studies"),
-    ClassList(acronym: "RGR", className: "Romance German Russian Language"),
-    ClassList(acronym: "RUSS", className: "Russian"),
+    ClassList(acronym: "REC", subject: "Recreation"),
+    ClassList(acronym: "R/ST", subject: "Religious Studies"),
+    ClassList(acronym: "RGR", subject: "Romance German Russian Language"),
+    ClassList(acronym: "RUSS", subject: "Russian"),
   ];
 
    List<ClassList> classListS =[
-    ClassList(acronym: "SCED", className: "Science Education"),
-    ClassList(acronym: "SCAE", className: "Social Cultural Analysis Education"),
-    ClassList(acronym: "S W", className: "Social Work"),
-    ClassList(acronym: "SOC", className: "Sociology"),
-    ClassList(acronym: "SPAN", className: "Spanish"),
-    ClassList(acronym: "SLP", className: "Speech-Language-Pathology"),
-    ClassList(acronym: "STAT", className: "Statistics"),
-    ClassList(acronym: "SDHE", className: "Student Development Higher ED"),
-    ClassList(acronym: "SRL", className: "Student Rec & Leadership"),
-    ClassList(acronym: "S/I", className: "Supplemental Instruction"),
-    ClassList(acronym: "SCM", className: "Supply Chain Management"),
+    ClassList(acronym: "SCED", subject: "Science Education"),
+    ClassList(acronym: "SCAE", subject: "Social Cultural Analysis Education"),
+    ClassList(acronym: "S W", subject: "Social Work"),
+    ClassList(acronym: "SOC", subject: "Sociology"),
+    ClassList(acronym: "SPAN", subject: "Spanish"),
+    ClassList(acronym: "SLP", subject: "Speech-Language-Pathology"),
+    ClassList(acronym: "STAT", subject: "Statistics"),
+    ClassList(acronym: "SDHE", subject: "Student Development Higher ED"),
+    ClassList(acronym: "SRL", subject: "Student Rec & Leadership"),
+    ClassList(acronym: "S/I", subject: "Supplemental Instruction"),
+    ClassList(acronym: "SCM", subject: "Supply Chain Management"),
   ];
 
   List<ClassList> classListT =[
-    ClassList(acronym: "THEA", className: "Theatre Arts"),
-    ClassList(acronym: "TRST", className: "Translation Studies"),
+    ClassList(acronym: "THEA", subject: "Theatre Arts"),
+    ClassList(acronym: "TRST", subject: "Translation Studies"),
   ];
 
   List<ClassList> classListU =[
-    ClassList(acronym: "UNIV", className: "University"),
-    ClassList(acronym: "UHP", className: "University Honors Program"),
-    ClassList(acronym: "UDCP", className: "Urban Dual Credential Program"),
+    ClassList(acronym: "UNIV", subject: "University"),
+    ClassList(acronym: "UHP", subject: "University Honors Program"),
+    ClassList(acronym: "UDCP", subject: "Urban Dual Credential Program"),
   ];
 
  List<ClassList> classListV =[
-    ClassList(acronym: "VIET", className: "Vietnamese"),
+    ClassList(acronym: "VIET", subject: "Vietnamese"),
   ];
 
   List<ClassList> classListW =[
-    ClassList(acronym: "WGSS", className: "Women's Gender Sexuality Studies"),
+    ClassList(acronym: "WGSS", subject: "Women's Gender Sexuality Studies"),
   ];
 
   List<ClassList> classListX = [];
@@ -238,7 +238,7 @@ class ClassCardState extends State<ClassCard>
                 SizedBox(height: 6),
                 Center(
                   child: Text(
-                    string.className,
+                    string.subject,
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 30,
