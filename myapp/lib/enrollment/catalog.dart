@@ -13,16 +13,6 @@ class Catalog extends StatefulWidget{
 
 
 class CatalogState extends State<Catalog>{
-  List<Widget> subViews = [
-    // Subject
-    Container(
-      child: Subject()
-    ),
-    // College
-    Container(
-      child: College()
-    )
-  ];
 
   SubView selectedSubView = SubView.subject;
 
