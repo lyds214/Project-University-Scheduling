@@ -6,7 +6,7 @@ class CollegeItem { // Item to create overall college
   CollegeItem({this.acronym, this.name, this.subject});
 }
 
-class SubjectItem { // Abstract tem to create subject
+class SubjectItem { // Item to create subject
 
   String acronym;
   String subject;
