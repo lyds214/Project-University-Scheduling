@@ -1,6 +1,18 @@
 import 'package:flutter/material.dart';
+import 'profile.dart';
 
-class ProfileCard extends StatelessWidget {
+class ProfileCard extends StatefulWidget {
+  var viewUserProfile;
+
+  ProfileCard({
+    this.viewUserProfile,
+  });
+
+  @override
+  _ProfileCardState createState() => _ProfileCardState();
+}
+
+class _ProfileCardState extends State<ProfileCard> {
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -9,12 +21,15 @@ class ProfileCard extends StatelessWidget {
         height: 125.0,
         buttonColor: Colors.grey[300],
         child: RaisedButton(
-          onPressed: () {},
-          child: Text(
-            'User',
-            style: TextStyle(
+          onPressed: () {
+            setState(() {
+              widget.viewUserProfile = true;
+              print('pressed \'User\' buton');
+            });
+          },
+          child: Text('User', style: TextStyle(
               fontSize: 30,
-              color: Colors.black, 
+              color: Colors.black,
             ),
           ),
         ),
