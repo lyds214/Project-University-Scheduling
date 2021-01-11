@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-// Three views
-import 'package:myapp/enrollment/catalog/catalog.dart';
-import 'package:myapp/enrollment/classes/class_card.dart';
-import 'package:myapp/enrollment/major_requirements.dart';
-import 'package:myapp/enrollment/semester.dart';
+// Import sub views
+import 'package:myapp/enrollment/catalog/catalog.dart'; // Catalog
+import 'package:myapp/enrollment/semester.dart'; // Semester
+import 'package:myapp/enrollment/major_requirements.dart'; // Major Requirements
 
 enum View { catalog, semester, major_requirements }
+enum SubView { subject, college, ge_requirements }
 
 class Enrollment extends StatefulWidget {
   @override
@@ -95,52 +95,52 @@ class EnrollmentState extends State<Enrollment> {
 
               SizedBox(height: 30),
 
-              Row(
-                children: <Widget>
-                [
-                  ButtonTheme(
-                    minWidth: 230.0,
-                    height: 60.0,
-                    child: RaisedButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => ClassCard())
-                        );
-                      },
-                      child: Text("Subject"),
-                    ),
-                  ),
+              // Row(
+              //   children: <Widget>
+              //   [
+              //     ButtonTheme(
+              //       minWidth: 230.0,
+              //       height: 60.0,
+              //       child: RaisedButton(
+              //         onPressed: () {
+              //           selectedSubView = SubView.subject;
+              //         },
+              //         child: Text("Subject"),
+              //       ),
+              //     ),
 
-                  SizedBox(width: 30),
+              //     SizedBox(width: 30),
 
-                  ButtonTheme(
-                    minWidth: 230.0,
-                    height: 60.0,
-                    child: RaisedButton(
-                      onPressed: () {},
-                      child: Text("College"),
-                    ),
-                  ),
+              //     ButtonTheme(
+              //       minWidth: 230.0,
+              //       height: 60.0,
+              //       child: RaisedButton(
+              //         onPressed: () {
+              //           selectedSubView = SubView.college;
+              //         },
+              //         child: Text("College"),
+              //       ),
+              //     ),
 
-                  SizedBox(width: 30),
+              //     SizedBox(width: 30),
 
-                  ButtonTheme(
-                    minWidth: 230.0,
-                    height: 60.0,
-                    child: RaisedButton(
-                      onPressed: () {},
-                      child: Text("GE Requirement"),
-                    ),
-                  ),
-                ],
-              ),
+              //     ButtonTheme(
+              //       minWidth: 230.0,
+              //       height: 60.0,
+              //       child: RaisedButton(
+              //         onPressed: () {},
+              //         child: Text("GE Requirement"),
+              //       ),
+              //     ),
+              //   ],
+              // ),
 
               
               FutureBuilder(
-                  builder: (BuildContext context, AsyncSnapshot snapshot) {
-                return getView();
-              })
+                builder: (BuildContext context, AsyncSnapshot snapshot) {
+                  return getView();
+                }
+              ),
             ],
           )),
         ),
