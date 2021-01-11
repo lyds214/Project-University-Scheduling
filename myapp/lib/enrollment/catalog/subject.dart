@@ -62,8 +62,7 @@ class _SubjectState extends State<Subject>{
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Container(
-        height: 10000,
+          
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>
@@ -154,7 +153,7 @@ class _SubjectState extends State<Subject>{
               ),
             ],
           ),
-      ),
+      
     );
   }
   
