@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/enrollment/classes/class_card.dart';
+import 'package:myapp/classes/class_card.dart';
 
 class CollegeItem {
   String acronym;
@@ -24,6 +24,36 @@ class _CollegeState extends State<College> {
     CollegeItem(acronym: "CLA", name: "College of Liberal Arts"),
     CollegeItem(acronym: "CNSM", name: "College of Natural Sciences & Mathematics"),
     CollegeItem(acronym: "CPIE", name: "College of Professional & International Education"),
+  ];
+
+  List<CollegeItem> collegeBusiness = [
+    CollegeItem(acronym: "ACCT", name: "Accountacy"),
+    CollegeItem(acronym: "BLAW", name: "Business Law"),
+    CollegeItem(acronym: "CBA", name: "College of Business"),
+    CollegeItem(acronym: "FIN", name: "Finance"),
+    CollegeItem(acronym: "HRM", name: "Human Resources Management"),
+    CollegeItem(acronym: "I S", name: "Information Systems"),
+    CollegeItem(acronym: "MGMT", name: "Management"),
+    CollegeItem(acronym: "MKTG", name: "Marketing"),
+    CollegeItem(acronym: "SCM", name: "Supply Chain Management"),
+  ];
+
+  List<CollegeItem> collegeEducation= [
+    CollegeItem(acronym: "COUN", name: "Counseling"),
+    CollegeItem(acronym: "EDLD", name: "Education Leadership Doctorate"),
+    CollegeItem(acronym: "EDCI", name: "Education - Curriculum & Instruction"),
+    CollegeItem(acronym: "EDEC", name: "Education - Early Childhood"),
+    CollegeItem(acronym: "EDEL", name: "Education - Elementary"),
+    CollegeItem(acronym: "EDSE", name: "Education - Secondary"),
+    CollegeItem(acronym: "EDSS", name: "Education - Single Subject"),
+    CollegeItem(acronym: "EDSP", name: "Education Specialist"),
+    CollegeItem(acronym: "EDAD", name: "Education Administration"),
+    CollegeItem(acronym: "ED P", name: "Education Psychology"),
+    CollegeItem(acronym: "ETEC", name: "Educational Technology"),
+    CollegeItem(acronym: "L/ST", name: "Liberal Studies"),
+    CollegeItem(acronym: "SCAE", name: "Social Cultural Analysis Education"),
+    CollegeItem(acronym: "SDHE", name: "Student Development Higher ED"),
+    CollegeItem(acronym: "UDCP", name: "Urban Dual Credential Program"),
   ];
 
   @override
@@ -58,7 +88,7 @@ class _CollegeState extends State<College> {
           child: Align(
             alignment: Alignment.centerLeft,
             child: Text(
-              "College of <placeholder>",
+              "College of Business",
               textAlign: TextAlign.left,
               style: TextStyle(
                 fontSize: 30,
@@ -70,11 +100,37 @@ class _CollegeState extends State<College> {
         Container(
           height: 5000,
           padding: EdgeInsets.fromLTRB(26, 40, 10, 10),
-          child: GridView.extent( // Creates grid of A classes
+          child: GridView.extent( // Creates college of business classes
             padding: EdgeInsets.all(10.0),
             childAspectRatio: (425/300),
             maxCrossAxisExtent: 425.0,
-            children: ClassCardState().classListA.map((string) => ClassCardState().classListTemplate(string)).toList(), //prints out the class names and acronyms on the cards.
+            children: collegeBusiness.map((string) => _buildCard(string)).toList(), //prints out the class names and acronyms on the cards.
+          ),
+        ),
+
+        Container(
+          height: 50,
+          child: Align(
+            alignment: Alignment.centerLeft,
+            child: Text(
+              "College of Education",
+              textAlign: TextAlign.left,
+              style: TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+        ),
+
+         Container(
+          height: 5000,
+          padding: EdgeInsets.fromLTRB(26, 40, 10, 10),
+          child: GridView.extent( // Creates college of business classes
+            padding: EdgeInsets.all(10.0),
+            childAspectRatio: (425/300),
+            maxCrossAxisExtent: 425.0,
+            children: collegeEducation.map((string) => _buildCard(string)).toList(), //prints out the class names and acronyms on the cards.
           ),
         ),
       ],
