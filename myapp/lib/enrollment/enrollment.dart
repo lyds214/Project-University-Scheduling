@@ -19,130 +19,92 @@ class EnrollmentState extends State<Enrollment> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Container(
-          child: Padding(
-            padding: EdgeInsets.fromLTRB(30, 30, 30, 30),
-            child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>
-            [
-              Text("Enrollment", style: TextStyle(fontSize: 50)),
-              SizedBox(height: 30.0),
-              Row(
-                children: <Widget>[
-                  TextButton(
-                    onPressed: () {
-                      setState(() {
-                        selectedView = View.catalog;
-                      });
-                    },
-                    child: Text(
-                      "Catalog",
-                      style: TextStyle(
-                          fontSize: 30,
-                          color: (selectedView == View.catalog)
-                              ? Colors.black
-                              : Colors.black12),
+      body: Container(
+        height: 5000,
+        child: SingleChildScrollView(
+          child: Container(
+            child: Padding(
+              padding: EdgeInsets.fromLTRB(30, 30, 30, 30),
+              child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>
+              [
+                Text("Enrollment", style: TextStyle(fontSize: 50)),
+                SizedBox(height: 30.0),
+                Row(
+                  children: <Widget>[
+                    TextButton(
+                      onPressed: () {
+                        setState(() {
+                          selectedView = View.catalog;
+                        });
+                      },
+                      child: Text(
+                        "Catalog",
+                        style: TextStyle(
+                            fontSize: 30,
+                            color: (selectedView == View.catalog)
+                                ? Colors.black
+                                : Colors.black12),
+                      ),
                     ),
-                  ),
-                  SizedBox(width: 30.0),
-                  Text("|",
-                      style: TextStyle(
-                        fontSize: 30,
-                        color: Colors.black,
-                      )),
-                  SizedBox(width: 30.0),
-                  TextButton(
-                    onPressed: () {
-                      setState(() {
-                        selectedView = View.semester;
-                      });
-                    },
-                    child: Text(
-                      "Semester",
-                      style: TextStyle(
+                    SizedBox(width: 30.0),
+                    Text("|",
+                        style: TextStyle(
                           fontSize: 30,
-                          color: (selectedView == View.semester)
-                              ? Colors.black
-                              : Colors.black12),
+                          color: Colors.black,
+                        )),
+                    SizedBox(width: 30.0),
+                    TextButton(
+                      onPressed: () {
+                        setState(() {
+                          selectedView = View.semester;
+                        });
+                      },
+                      child: Text(
+                        "Semester",
+                        style: TextStyle(
+                            fontSize: 30,
+                            color: (selectedView == View.semester)
+                                ? Colors.black
+                                : Colors.black12),
+                      ),
                     ),
-                  ),
-                  SizedBox(width: 30.0),
-                  Text("|",
-                      style: TextStyle(
-                        fontSize: 30,
-                        color: Colors.black,
-                      )),
-                  SizedBox(width: 30.0),
-                  TextButton(
-                    onPressed: () {
-                      setState(() {
-                        selectedView = View.major_requirements;
-                      });
-                    },
-                    child: Text(
-                      "Major Requirements",
-                      style: TextStyle(
+                    SizedBox(width: 30.0),
+                    Text("|",
+                        style: TextStyle(
                           fontSize: 30,
-                          color: (selectedView == View.major_requirements)
-                              ? Colors.black
-                              : Colors.black12),
+                          color: Colors.black,
+                        )),
+                    SizedBox(width: 30.0),
+                    TextButton(
+                      onPressed: () {
+                        setState(() {
+                          selectedView = View.major_requirements;
+                        });
+                      },
+                      child: Text(
+                        "Major Requirements",
+                        style: TextStyle(
+                            fontSize: 30,
+                            color: (selectedView == View.major_requirements)
+                                ? Colors.black
+                                : Colors.black12),
+                      ),
                     ),
-                  ),
-                ],
-              ),
+                  ],
+                ),
 
-              SizedBox(height: 30),
+                SizedBox(height: 30),
 
-              // Row(
-              //   children: <Widget>
-              //   [
-              //     ButtonTheme(
-              //       minWidth: 230.0,
-              //       height: 60.0,
-              //       child: RaisedButton(
-              //         onPressed: () {
-              //           selectedSubView = SubView.subject;
-              //         },
-              //         child: Text("Subject"),
-              //       ),
-              //     ),
-
-              //     SizedBox(width: 30),
-
-              //     ButtonTheme(
-              //       minWidth: 230.0,
-              //       height: 60.0,
-              //       child: RaisedButton(
-              //         onPressed: () {
-              //           selectedSubView = SubView.college;
-              //         },
-              //         child: Text("College"),
-              //       ),
-              //     ),
-
-              //     SizedBox(width: 30),
-
-              //     ButtonTheme(
-              //       minWidth: 230.0,
-              //       height: 60.0,
-              //       child: RaisedButton(
-              //         onPressed: () {},
-              //         child: Text("GE Requirement"),
-              //       ),
-              //     ),
-              //   ],
-              // ),
-
-              
-              FutureBuilder(
-                builder: (BuildContext context, AsyncSnapshot snapshot) {
-                  return getView();
-                }
-              ),
-            ],
-          )),
+                FutureBuilder(
+                  builder: (BuildContext context, AsyncSnapshot snapshot) {
+                    return getView();
+                  }
+                ),
+              ],
+            )),
+          ),
         ),
       ),
     );

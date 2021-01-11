@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/enrollment/catalog/subject.dart';
-import 'package:myapp/enrollment/classes/class_card.dart';
-import 'package:myapp/enrollment/classes/class_list.dart';
 
 // Import sub views
 import 'package:myapp/enrollment/catalog/college.dart';
@@ -15,6 +13,16 @@ class Catalog extends StatefulWidget{
 
 
 class CatalogState extends State<Catalog>{
+  List<Widget> subViews = [
+    // Subject
+    Container(
+      child: Subject()
+    ),
+    // College
+    Container(
+      child: College()
+    )
+  ];
 
   SubView selectedSubView = SubView.subject;
 
@@ -23,13 +31,15 @@ class CatalogState extends State<Catalog>{
     return Column(
       children: <Widget>[
         Row(
-          children: <Widget>[
+          children: <Widget> [
             ButtonTheme(
               minWidth: 230.0,
               height: 60.0,
               child: RaisedButton(
                 onPressed: () {
-                  selectedSubView = SubView.subject;
+                  setState(() {
+                    selectedSubView = SubView.subject;
+                  });
                 },
                 child: Text("Subject"),
               ),
@@ -42,7 +52,9 @@ class CatalogState extends State<Catalog>{
               height: 60.0,
               child: RaisedButton(
                 onPressed: () {
-                  // selectedSubView = SubView.college;
+                  setState(() {
+                    selectedSubView = SubView.college;
+                  });
                 },
                 child: Text("College"),
               ),
@@ -58,13 +70,13 @@ class CatalogState extends State<Catalog>{
                 child: Text("GE Requirement"),
               ),
             ),
-
-            // FutureBuilder(
-            //   builder: (BuildContext context, AsyncSnapshot snapshot) {
-            //     return getSubView();
-            //   }
-            // ),
           ],
+        ),
+
+        FutureBuilder(
+          builder: (BuildContext context, AsyncSnapshot snapshot) {
+            return getSubView();
+          }
         ),
       ],
     );

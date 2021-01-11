@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 
 // Import our personal widgets here
-import 'package:myapp/header.dart';
 import 'package:myapp/landing.dart';
-import 'package:myapp/enrollment/catalog/subject.dart';
-
 
 // Run the app
 void main() {

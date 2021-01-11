@@ -61,9 +61,9 @@ class _SubjectState extends State<Subject>{
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[ 
-        SingleChildScrollView( 
+    return Container(
+      child: Container(
+        height: 10000,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>
@@ -116,7 +116,7 @@ class _SubjectState extends State<Subject>{
 
               SizedBox(height: 20),
 
-              //Creates tabs
+              // Creates tabs
               DefaultTabController(
                 length: 26,
                 initialIndex: 0, 
@@ -159,22 +159,23 @@ class _SubjectState extends State<Subject>{
                         ],
                       ),
                     ),
-
-                    //Shows cards and grids
+                    // Shows cards and grids
                     Container(
-                      height: 5000,
                       //color: Colors.red,
-                      child: SearchState,
+                      child: SizedBox(
+                        height: 5000,
+                        child: SearchState,
+                      ),
                     ),       
                   ],
                 ),
               ),
             ],
           ),
-        ),
-      ],
+      ),
     );
   }
+  
 
   List<ClassList> _buildList() {
     return _list;
@@ -196,15 +197,17 @@ class _SubjectState extends State<Subject>{
   }
 
   Widget BuildSearchGrid(BuildContext context) {
-    return GridView.builder(
-      padding: EdgeInsets.all(10.0),
-      itemCount: _searchList.length,
-      itemBuilder: (context, index) {
-        return ClassCardState().classListTemplate(_searchList[index]);
-      },
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 4,
-      )
+    return Container(
+      child: GridView.builder(
+        padding: EdgeInsets.all(10.0),
+        itemCount: _searchList.length,
+        itemBuilder: (context, index) {
+          return ClassCardState().classListTemplate(_searchList[index]);
+        },
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 4,
+        )
+      ),
     );
   }
 
