@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 // Three views
-import 'package:myapp/enrollment/catalog.dart';
+import 'package:myapp/enrollment/catalog/catalog.dart';
 import 'package:myapp/enrollment/classes/class_card.dart';
 import 'package:myapp/enrollment/major_requirements.dart';
 import 'package:myapp/enrollment/semester.dart';
