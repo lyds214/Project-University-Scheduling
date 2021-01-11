@@ -68,8 +68,6 @@ class _SubjectState extends State<Subject>{
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>
             [
-              SizedBox(height: 30),
-
               Row(
                   children: <Widget>[
                     Expanded(

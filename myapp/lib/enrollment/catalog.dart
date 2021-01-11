@@ -63,6 +63,8 @@ class CatalogState extends State<Catalog>{
           ],
         ),
 
+        SizedBox(height: 30),
+
         FutureBuilder(
           builder: (BuildContext context, AsyncSnapshot snapshot) {
             return getSubView();
