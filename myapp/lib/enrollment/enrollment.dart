@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 // Import sub views
-import 'package:myapp/enrollment/catalog/catalog.dart'; // Catalog
+import 'package:myapp/enrollment/catalog.dart'; // Catalog
 import 'package:myapp/enrollment/semester.dart'; // Semester
 import 'package:myapp/enrollment/major_requirements.dart'; // Major Requirements
 
