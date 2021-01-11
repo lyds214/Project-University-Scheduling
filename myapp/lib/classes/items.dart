@@ -23,7 +23,7 @@ class ClassItem { // Item to create class
   String genEdReq;
   ClassItem section;
 
-  ClassItem({this.classNumber, this.classTitle, this.section});
+  ClassItem({this.classNumber, this.classTitle, this.genEdReq, this.section});
 }
 
 class SectionItem { // Item to create section
