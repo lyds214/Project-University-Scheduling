@@ -72,7 +72,7 @@ class CatalogState extends State<Catalog>{
                   setState(() {
                     selectedSubView = SubView.ge_requirements;
                   });
-                },
+                }, 
                 child: Text(
                   "GE Requirement",
                   style: TextStyle(
