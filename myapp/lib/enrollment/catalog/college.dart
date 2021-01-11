@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/enrollment/classes/class_card.dart';
 
 class CollegeItem {
   String acronym;
@@ -27,14 +28,56 @@ class _CollegeState extends State<College> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 1000,
-      child: GridView.extent(
-        padding: EdgeInsets.all(10.0),
-        childAspectRatio: (425/325),
-        maxCrossAxisExtent: 425.0,
-        children: collegeList.map((string) => _buildCard(string)).toList(),
-      ),
+    return Column(
+      children: <Widget> [
+        Container(
+          height: 50,
+          child: Align(
+            alignment: Alignment.centerLeft,
+            child: Text(
+              "View by College",
+              textAlign: TextAlign.left,
+              style: TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+        ),
+        Container(
+          height: 600,
+          child: GridView.count(
+            padding: EdgeInsets.all(10.0),
+            crossAxisCount: 4,
+            childAspectRatio: (425/300),
+            children: collegeList.map((string) => _buildCard(string)).toList(),
+          ),
+        ),
+        Container(
+          height: 50,
+          child: Align(
+            alignment: Alignment.centerLeft,
+            child: Text(
+              "College of <placeholder>",
+              textAlign: TextAlign.left,
+              style: TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+        ),
+        Container(
+          height: 5000,
+          padding: EdgeInsets.fromLTRB(26, 40, 10, 10),
+          child: GridView.extent( // Creates grid of A classes
+            padding: EdgeInsets.all(10.0),
+            childAspectRatio: (425/300),
+            maxCrossAxisExtent: 425.0,
+            children: ClassCardState().classListA.map((string) => ClassCardState().classListTemplate(string)).toList(), //prints out the class names and acronyms on the cards.
+          ),
+        ),
+      ],
     );
   }
 
@@ -49,30 +92,19 @@ class _CollegeState extends State<College> {
           child: Container(
             child:  Column(
               crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>
-              [
-                Padding(padding: EdgeInsets.all(15.0)),
+              children: <Widget> [
+                Spacer(),
                 Center(
                   child: Text(
-                    string.acronym,
+                    string.name,
+                    textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 36,
                       color: Colors.grey[600],
                     ),
                   ),
                 ),
-
-                SizedBox(height: 6),
-                Center(
-                  child: Text(
-                    string.name,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 30,
-                      color: Colors.grey[600],
-                    ),
-                  ),
-                ),
+                Spacer(),
               ],
             ),
           ),
