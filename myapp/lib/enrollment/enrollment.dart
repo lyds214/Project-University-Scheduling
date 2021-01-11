@@ -95,23 +95,6 @@ class EnrollmentState extends State<Enrollment> {
 
               SizedBox(height: 30),
 
-              // START SEARCH BAR
-              Row(
-                children: <Widget>[
-                  Expanded(
-                    child: TextFormField(
-                      decoration: InputDecoration(
-                        labelText: "This is a search bar",
-                      ),
-                    ),
-                  ),
-                  Spacer(flex: 2),
-                ],
-              ),
-              // END SEARCH BAR
-
-              SizedBox(height: 30),
-
               Row(
                 children: <Widget>
                 [
