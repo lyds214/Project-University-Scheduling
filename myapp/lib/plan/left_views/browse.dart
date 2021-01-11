@@ -140,7 +140,7 @@ class BrowseState extends State<Browse> {
         children: <Widget>[
           SizedBox(height: 30.0),
           Container(
-            width: 1000.0,
+            width: 500,
             child: Row(
               children: <Widget>[
                 Expanded(
