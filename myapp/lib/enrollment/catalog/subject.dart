@@ -74,11 +74,6 @@ class _SubjectState extends State<Subject>{
                   children: <Widget>[
                     Expanded(
                       child: TextField(
-                        onTap: () {
-                          setState(() {
-                            _handleSearchStart();
-                          });
-                        },
                         onChanged: (text) {
                           setState(() {
                             _handleSearchStart();
@@ -102,17 +97,6 @@ class _SubjectState extends State<Subject>{
                     Spacer(flex: 2),
                   ],
                 ),
-
-              Container(
-                padding: EdgeInsets.all(10),
-                child: Text(
-                  "View by Subject",
-                  style: TextStyle(
-                    fontSize: 25,
-                  ),
-                ),
-              ),
-              
 
               SizedBox(height: 20),
 
@@ -182,18 +166,14 @@ class _SubjectState extends State<Subject>{
   }
 
   List<ClassList> _buildClassList() {
-    if (_searchText.isEmpty) {
-      return _searchList = _list;
-    }
-    else {
-      _searchList = _list
-        .where((element) =>
-          element.subject.toLowerCase().contains(_searchText.toLowerCase()) ||
-          element.acronym.toLowerCase().contains(_searchText.toLowerCase()))
-        .toList();
-        print('${_searchList.length}');
-        return _searchList;
-    }
+    SearchState = BuildSearchGrid(context);
+    _searchList = _list
+      .where((element) =>
+        element.subject.toLowerCase().contains(_searchText.toLowerCase()) ||
+        element.acronym.toLowerCase().contains(_searchText.toLowerCase()))
+      .toList();
+      print('${_searchList.length}');
+      return _searchList;
   }
 
   Widget BuildSearchGrid(BuildContext context) {
@@ -204,8 +184,9 @@ class _SubjectState extends State<Subject>{
         itemBuilder: (context, index) {
           return ClassCardState().classListTemplate(_searchList[index]);
         },
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 4,
+        gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+          childAspectRatio: (425/300),
+          maxCrossAxisExtent: 425.0
         )
       ),
     );
