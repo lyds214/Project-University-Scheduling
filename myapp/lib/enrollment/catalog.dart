@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/enrollment/catalog/subject.dart';
 
 // Import sub views
+import 'package:myapp/enrollment/catalog/subject.dart';
 import 'package:myapp/enrollment/catalog/college.dart';
+import 'package:myapp/enrollment/catalog/gereq.dart';
 
 enum SubView { subject, college, ge_requirements }
 
