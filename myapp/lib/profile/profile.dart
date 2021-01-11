@@ -9,7 +9,13 @@ class _State extends State<Profile> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text("Hello Profile"),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text("Hello Profile"),
+        ],
+      ),
+
     );
   }
 }
