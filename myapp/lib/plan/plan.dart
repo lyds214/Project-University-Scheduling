@@ -11,7 +11,7 @@ class Plan extends StatelessWidget {
         body: Container(
       child: Row(
         children: <Widget>[
-          Left(), Weekview(),
+          Left(), WeekView(),
         ],
       ),
     ));

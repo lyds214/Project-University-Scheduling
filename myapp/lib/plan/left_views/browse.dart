@@ -1,16 +1,8 @@
 import 'package:flutter/material.dart';
 
-bool _mondayPressed = false;
-bool _tuesdayPressed = false;
-bool _wednesdayPressed = false;
-bool _thursdayPressed = false;
-bool _fridayPressed = false;
-bool _saturdayPressed = false;
-
-String startsAt = 'Starts at';
-String endsAt = 'Ends at';
-
-bool check = false;
+// Imported just to test
+import 'package:myapp/enrollment/classes/class_card.dart';
+import 'package:myapp/enrollment/classes/class_list.dart';
 
 class Browse extends StatefulWidget {
   @override
@@ -18,13 +10,166 @@ class Browse extends StatefulWidget {
 }
 
 class BrowseState extends State<Browse> {
+  bool _mondayPressed = false;
+  bool _tuesdayPressed = false;
+  bool _wednesdayPressed = false;
+  bool _thursdayPressed = false;
+  bool _fridayPressed = false;
+  bool _saturdayPressed = false;
+
+  String startsAt = 'Starts at';
+  String endsAt = 'Ends at';
+
+  bool check = false;
+
+
+// Searchbar Variables
+  Widget SearchState;
+
+  bool _IsSearching;
+  final key = GlobalKey<ScaffoldState>();
+  final TextEditingController _searchQuery = TextEditingController();
+  List<ClassList> _list;
+  List<ClassList> _searchList = List();
+  String _searchText = "";
+
+  _SubjectState() {
+    _searchQuery.addListener(() {
+      if (_searchQuery.text.isEmpty) {
+        setState(() {
+          _IsSearching = false;
+          _searchText = "";
+          _buildClassList();
+        });
+      } else {
+        setState(() {
+          _IsSearching = true;
+          _searchText = _searchQuery.text;
+          _buildClassList();
+        });
+      }
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _IsSearching = false;
+    init();
+    SearchState = ClassCard();
+  }
+
+  void init() {
+    _list = ClassCardState().classListA +
+        ClassCardState().classListB +
+        ClassCardState().classListC +
+        ClassCardState().classListD +
+        ClassCardState().classListE +
+        ClassCardState().classListF +
+        ClassCardState().classListG +
+        ClassCardState().classListH +
+        ClassCardState().classListI +
+        ClassCardState().classListJ +
+        ClassCardState().classListK +
+        ClassCardState().classListL +
+        ClassCardState().classListM +
+        ClassCardState().classListN +
+        ClassCardState().classListO +
+        ClassCardState().classListP +
+        ClassCardState().classListQ +
+        ClassCardState().classListR +
+        ClassCardState().classListS +
+        ClassCardState().classListT +
+        ClassCardState().classListU +
+        ClassCardState().classListV +
+        ClassCardState().classListW +
+        ClassCardState().classListX +
+        ClassCardState().classListY +
+        ClassCardState().classListZ;
+    _searchList = _list;
+  }
+
+  // Searchbar Functions
+  List<ClassList> _buildList() {
+    return _list;
+  }
+
+  List<ClassList> _buildClassList() {
+    SearchState = BuildSearchGrid(context);
+    _searchList = _list
+        .where((element) =>
+            element.subject.toLowerCase().contains(_searchText.toLowerCase()) ||
+            element.acronym.toLowerCase().contains(_searchText.toLowerCase()))
+        .toList();
+    print('${_searchList.length}');
+    return _searchList;
+  }
+
+  Widget BuildSearchGrid(BuildContext context) {
+    return Container(
+      child: GridView.builder(
+          padding: EdgeInsets.all(10.0),
+          itemCount: _searchList.length,
+          itemBuilder: (context, index) {
+            return ClassCardState().classListTemplate(_searchList[index]);
+          },
+          gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+              childAspectRatio: (425 / 300), maxCrossAxisExtent: 425.0)),
+    );
+  }
+
+  void _handleSearchStart() {
+    setState(() {
+      _IsSearching = true;
+      SearchState = BuildSearchGrid(context);
+    });
+  }
+
+  void _handleSearchEnd() {
+    setState(() {
+      _IsSearching = false;
+      _searchQuery.clear();
+      SearchState = ClassCard();
+    });
+  }
+// End of Searchbar
+
   @override
   Widget build(BuildContext context) {
     return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           SizedBox(height: 30.0),
-          Text("Search Bar"),
+          Container(
+            width: 1000.0,
+            child: Row(
+              children: <Widget>[
+                Expanded(
+                  child: TextField(
+                    onChanged: (text) {
+                      setState(() {
+                        _handleSearchStart();
+                      });
+                    },
+                    controller: _searchQuery,
+                    decoration: InputDecoration(
+                      labelText: "Search",
+                    ),
+                  ),
+                ),
+                IconButton(
+                  icon: Icon(Icons.clear),
+                  onPressed: () {
+                    setState(() {
+                      _handleSearchEnd();
+                      FocusScope.of(context).unfocus();
+                    });
+                  },
+                ),
+                Spacer(flex: 2),
+              ],
+            ),
+          ),
           SizedBox(height: 30.0),
           Text(
             "Days",
