@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/enrollment/classes/class_card.dart';
+import 'package:myapp/classes/class_card.dart';
 
 class CollegeItem {
   String acronym;

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 // Imported just to test
-import 'package:myapp/enrollment/classes/class_card.dart';
-import 'package:myapp/enrollment/classes/class_list.dart';
+import 'package:myapp/classes/class_card.dart';
+import 'package:myapp/classes/items.dart';
 
 class Browse extends StatefulWidget {
   @override
@@ -22,15 +22,14 @@ class BrowseState extends State<Browse> {
 
   bool check = false;
 
-
 // Searchbar Variables
   Widget SearchState;
 
   bool _IsSearching;
   final key = GlobalKey<ScaffoldState>();
   final TextEditingController _searchQuery = TextEditingController();
-  List<ClassList> _list;
-  List<ClassList> _searchList = List();
+  List<SubjectItem> _list;
+  List<SubjectItem> _searchList = List();
   String _searchText = "";
 
   _SubjectState() {
@@ -39,13 +38,13 @@ class BrowseState extends State<Browse> {
         setState(() {
           _IsSearching = false;
           _searchText = "";
-          _buildClassList();
+          _buildSubjectItem();
         });
       } else {
         setState(() {
           _IsSearching = true;
           _searchText = _searchQuery.text;
-          _buildClassList();
+          _buildSubjectItem();
         });
       }
     });
@@ -90,11 +89,11 @@ class BrowseState extends State<Browse> {
   }
 
   // Searchbar Functions
-  List<ClassList> _buildList() {
+  List<SubjectItem> _buildList() {
     return _list;
   }
 
-  List<ClassList> _buildClassList() {
+  List<SubjectItem> _buildSubjectItem() {
     SearchState = BuildSearchGrid(context);
     _searchList = _list
         .where((element) =>
