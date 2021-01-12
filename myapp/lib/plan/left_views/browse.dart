@@ -26,25 +26,22 @@ class BrowseState extends State<Browse> {
   Widget SearchState;
 
   bool _IsSearching;
-  final key = GlobalKey<ScaffoldState>();
   final TextEditingController _searchQuery = TextEditingController();
-  List<SubjectItem> _list;
-  List<SubjectItem> _searchList = List();
-  String _searchText = "";
+  String _searchText;
 
-  _SubjectState() {
+  _CourseState() {
     _searchQuery.addListener(() {
       if (_searchQuery.text.isEmpty) {
         setState(() {
           _IsSearching = false;
-          _searchText = "";
-          _buildSubjectItem();
+          _searchText = '';
+          _buildCourseItem();
         });
       } else {
         setState(() {
           _IsSearching = true;
           _searchText = _searchQuery.text;
-          _buildSubjectItem();
+          _buildCourseItem();
         });
       }
     });
@@ -52,122 +49,54 @@ class BrowseState extends State<Browse> {
 
   @override
   void initState() {
+    // TODO: implement initState
     super.initState();
     _IsSearching = false;
-    init();
-    SearchState = ClassCard();
-  }
-
-  void init() {
-    _list = ClassCardState().classListA +
-        ClassCardState().classListB +
-        ClassCardState().classListC +
-        ClassCardState().classListD +
-        ClassCardState().classListE +
-        ClassCardState().classListF +
-        ClassCardState().classListG +
-        ClassCardState().classListH +
-        ClassCardState().classListI +
-        ClassCardState().classListJ +
-        ClassCardState().classListK +
-        ClassCardState().classListL +
-        ClassCardState().classListM +
-        ClassCardState().classListN +
-        ClassCardState().classListO +
-        ClassCardState().classListP +
-        ClassCardState().classListQ +
-        ClassCardState().classListR +
-        ClassCardState().classListS +
-        ClassCardState().classListT +
-        ClassCardState().classListU +
-        ClassCardState().classListV +
-        ClassCardState().classListW +
-        ClassCardState().classListX +
-        ClassCardState().classListY +
-        ClassCardState().classListZ;
-    _searchList = _list;
+    _searchText = '';
   }
 
   // Searchbar Functions
-  List<SubjectItem> _buildList() {
-    return _list;
-  }
 
-  List<SubjectItem> _buildSubjectItem() {
-    SearchState = BuildSearchGrid(context);
-    _searchList = _list
-        .where((element) =>
-            element.subject.toLowerCase().contains(_searchText.toLowerCase()) ||
-            element.acronym.toLowerCase().contains(_searchText.toLowerCase()))
-        .toList();
-    print('${_searchList.length}');
-    return _searchList;
-  }
+  void _buildCourseItem() {}
 
-  Widget BuildSearchGrid(BuildContext context) {
-    return Container(
-      child: GridView.builder(
-          padding: EdgeInsets.all(10.0),
-          itemCount: _searchList.length,
-          itemBuilder: (context, index) {
-            return ClassCardState().classListTemplate(_searchList[index]);
-          },
-          gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-              childAspectRatio: (425 / 300), maxCrossAxisExtent: 425.0)),
-    );
-  }
+  void _handleSearchStart() {}
 
-  void _handleSearchStart() {
-    setState(() {
-      _IsSearching = true;
-      SearchState = BuildSearchGrid(context);
-    });
-  }
-
-  void _handleSearchEnd() {
-    setState(() {
-      _IsSearching = false;
-      _searchQuery.clear();
-      SearchState = ClassCard();
-    });
-  }
+  void _handleSearchEnd() {}
 // End of Searchbar
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
+    return Container(
+        child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
           SizedBox(height: 30.0),
-          Container(
-            width: 500,
-            child: Row(
-              children: <Widget>[
-                Expanded(
-                  child: TextField(
-                    onChanged: (text) {
-                      setState(() {
-                        _handleSearchStart();
-                      });
-                    },
-                    controller: _searchQuery,
-                    decoration: InputDecoration(
-                      labelText: "Search",
-                    ),
-                  ),
-                ),
-                IconButton(
-                  icon: Icon(Icons.clear),
-                  onPressed: () {
+          Row(
+            children: <Widget>[
+              Container(
+                width: 300,
+                child: TextField(
+                  onChanged: (text) {
                     setState(() {
-                      _handleSearchEnd();
-                      FocusScope.of(context).unfocus();
+                      _handleSearchStart();
                     });
                   },
+                  controller: _searchQuery,
+                  decoration: InputDecoration(
+                    labelText: "Search",
+                  ),
                 ),
-                Spacer(flex: 2),
-              ],
-            ),
+              ),
+              IconButton(
+                icon: Icon(Icons.clear),
+                onPressed: () {
+                  setState(() {
+                    _handleSearchEnd();
+                    FocusScope.of(context).unfocus();
+                  });
+                },
+              ),
+            ],
           ),
           SizedBox(height: 30.0),
           Text(
@@ -293,7 +222,7 @@ class BrowseState extends State<Browse> {
               Text('Show conflicts in times.')
             ],
           )
-        ]);
+        ]));
   }
 
   var times = <String>[
