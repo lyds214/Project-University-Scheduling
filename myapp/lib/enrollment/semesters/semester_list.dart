@@ -19,16 +19,16 @@ class SemesterList extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             _semesterList[0],
-            SizedBox(width: 25),
+            SizedBox(width: 50),
             _semesterList[1],
           ],
         ),
-        SizedBox(height: 25),
+        SizedBox(height: 50),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             _semesterList[2],
-            SizedBox(width: 25),
+            SizedBox(width: 50),
             _semesterList[3],
           ],
         ),

@@ -14,7 +14,7 @@ class SemesterCard extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(5.0),
         ),
-        minWidth: 300,
+        minWidth: 500,
         height: 175,
         buttonColor: Colors.grey[300],
         child: RaisedButton(
