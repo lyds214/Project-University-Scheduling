@@ -25,75 +25,70 @@ class LeftState extends State<Left> {
             children: <Widget>[
               Text("Plan Your Schedule", style: TextStyle(fontSize: 50)),
               SizedBox(height: 30.0),
-              Row(
-                children: <Widget>[
-                  TextButton(
-                    onPressed: () {
-                      setState(() {
-                        selectedView = View.browse;
-                      });
-                    },
-                    child: Text(
-                      "Browse",
-                      style: TextStyle(
-                          fontSize: 30,
-                          color: (selectedView == View.browse)
-                              ? Colors.black
-                              : Colors.black12),
-                    ),
-                  ),
-                  SizedBox(width: 30.0),
-                  Text("|",
-                      style: TextStyle(
-                        fontSize: 30,
-                        color: Colors.black,
-                      )),
-                  SizedBox(width: 30.0),
-                  TextButton(
-                    onPressed: () {
-                      setState(() {
-                        selectedView = View.schedule;
-                      });
-                    },
-                    child: Text(
-                      "Schedule",
-                      style: TextStyle(
-                          fontSize: 30,
-                          color: (selectedView == View.schedule)
-                              ? Colors.black
-                              : Colors.black12),
-                    ),
-                  ),
-                  SizedBox(width: 30.0),
-                  Text("|",
-                      style: TextStyle(
-                        fontSize: 30,
-                        color: Colors.black,
-                      )),
-                  SizedBox(width: 30.0),
-                  TextButton(
-                    onPressed: () {
-                      setState(() {
-                        selectedView = View.ratings;
-                      });
-                    },
-                    child: Text(
-                      "Ratings",
-                      style: TextStyle(
-                          fontSize: 30,
-                          color: (selectedView == View.ratings)
-                              ? Colors.black
-                              : Colors.black12),
-                    ),
-                  ),
-                ],
-              ),
+              PlanningTab(),
               FutureBuilder(
                   builder: (BuildContext context, AsyncSnapshot snapshot) {
                 return getView();
               })
             ],
           )),
+    );
+  }
+
+  Widget PlanningTab() {
+    return Row(
+      children: [
+        TextButton(
+          child: Text(
+            'Browse',
+            style: StyleButton(View.browse),
+          ),
+          onPressed: () {
+            setState(() {
+              selectedView = View.browse;
+            });
+          },
+        ),
+        SizedBox(width: 30.0),
+        VerticalBar(),
+        SizedBox(width: 30.0),
+        TextButton(
+          child: Text(
+            'Schedule', 
+            style: StyleButton(View.schedule),
+          ),
+          onPressed: () {
+            setState(() {
+              selectedView = View.schedule; 
+            });
+          },
+        ),
+        SizedBox(width: 30.0),
+        VerticalBar(),
+        SizedBox(width: 30.0),
+        TextButton(
+          child: Text(
+            'Ratings',
+            style: StyleButton(View.ratings),
+          ),
+          onPressed: () {
+            setState(() {
+              selectedView = View.ratings; 
+            });
+          },
+        ),
+      ],
+    );
+  }
+
+  Widget VerticalBar() {
+    return Text('|', style: TextStyle(fontSize: 30));
+  }
+
+  TextStyle StyleButton(View view) {
+    return TextStyle(
+      fontSize: 30,
+      color: (selectedView == view) ? Colors.black : Colors.black12,
     );
   }
 
