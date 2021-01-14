@@ -69,7 +69,7 @@ class _Landing extends State<Landing> with SingleTickerProviderStateMixin {
                 child: ElevatedButton( // Enter button
                   child: Text("Enter"),
                   onPressed: () {
-                    Navigator.of(context).push(_createRoute());
+                    Navigator.pushReplacement(context, _createRoute());
                   }
                 ),
               ),
